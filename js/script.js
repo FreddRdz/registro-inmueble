@@ -8,15 +8,3 @@ selectEntregaInput.addEventListener('change', () => {
     selectAnioInput.disabled = false;
   }
 });
-
-// const inputPrecio = document.querySelector('.precio-input');
-// const meterSquareInput = document.querySelector('.metros-cuadrados-input');
-
-// meterSquareInput.addEventListener('change', () => {
-//   if (meterSquareInput.value.length > 0) {
-//     inputPrecio.disabled = true;
-//     inputPrecio.value = '';
-//   } else {
-//     inputPrecio.disabled = false;
-//   }
-// });
