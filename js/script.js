@@ -120,12 +120,12 @@ selectProjectRegister.addEventListener('change', () => {
 
 // CheckRadio de las terrazas en sección casas si es verdadero
 const checkRadioTerrazaM2CasasTrue = document.querySelector(
-  '#flexRadioWalkinTerrazaTrueCasas'
+  '#flexRadioTerrazasTrueCasas'
 );
 
 // CheckRadio de las terrazas en sección casas si es falso
 const checkRadioTerrazaM2CasasFalse = document.querySelector(
-  '#flexRadioWalkinTerrazaFalseCasas'
+  '#flexRadioTerrazasFalseCasas'
 );
 
 // Input del campo de los metros cuadrados de las terrazas en sección casas
