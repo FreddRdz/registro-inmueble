@@ -77,9 +77,6 @@ const inputsFieldsCaracteristicasTerrenos = document.querySelectorAll(
   '.form-caracteristicas-terrenos-container > .row > .col-12 > .input-campo > input'
 );
 
-console.log(checkBoxesAmenidadesTerrenos);
-console.log(inputsFieldsCaracteristicasTerrenos);
-
 // Condiciones generales
 let conditionGeneralInputs = false;
 let conditionGeneralSelects = false;

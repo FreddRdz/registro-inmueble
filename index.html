@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/eb4e47e033.js"
+      crossorigin="anonymous"
+    ></script>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -447,6 +451,45 @@
                         >
                           Hamacas
                         </label>
+                      </div>
+                      <label
+                        for="inputNuevoProyectoOtrasAmenidadesCasas"
+                        class="form-label mt-2"
+                        ><b>Otras</b>
+                      </label>
+                      <div class="wrapper-casas">
+                        <div class="task-input-casas">
+                          <input
+                            type="text"
+                            autocomplete="off"
+                            class="form-control"
+                            id="inputNuevoProyectoOtrasAmenidadesCasas"
+                          />
+                        </div>
+                        <ul class="task-box-casas mt-2 p-0">
+                          <li class="task-casas border-bottom">
+                            <p class="task-text">Nueva tarea</p>
+                            <div class="settings-casas">
+                              <i class="fa-solid fa-ellipsis"></i>
+                              <ul class="task-menu-casas shadow">
+                                <li><i class="fa-solid fa-pen"></i>Editar</li>
+                                <li><i class="fa-solid fa-trash"></i>Borrar</li>
+                              </ul>
+                            </div>
+                          </li>
+                          <li class="task-casas border-bottom">
+                            <p class="task-text">Nueva tarea</p>
+                            <div class="settings">
+                              <i class="fa-solid fa-ellipsis"></i>
+                            </div>
+                          </li>
+                          <li class="task-casas border-bottom">
+                            <p class="task-text-casas">Nueva tarea</p>
+                            <div class="settings-casas">
+                              <i class="fa-solid fa-ellipsis"></i>
+                            </div>
+                          </li>
+                        </ul>
                       </div>
                     </div>
                     <div class="form-amenidades-container-terrenos mb-4 d-none">
@@ -940,7 +983,7 @@
                     aria-expanded="false"
                     aria-controls="flush-collapseThree"
                   >
-                    Características
+                    Tipología
                   </button>
                 </h2>
                 <div
@@ -1117,7 +1160,7 @@
                               >M<sup>2</sup> de terrazas</label
                             >
                             <input
-                              type="number"
+                              type="text"
                               autocomplete="off"
                               class="form-control"
                               id="inputNuevoProyectoM2DeTerrazasCasas"
@@ -1264,7 +1307,7 @@
                           <label
                             for="inputNuevoProyectoHabServicioCasas"
                             class="form-label"
-                            >Habitación a servicio</label
+                            >Habitación de servicio</label
                           >
                           <div class="form-check">
                             <input
@@ -1632,7 +1675,7 @@
                         <label
                           for="inputNuevoProyectoHabServicioDepartamentos"
                           class="form-label"
-                          >Habitación a servicio</label
+                          >Habitación de servicio</label
                         >
                         <div class="form-check">
                           <input
@@ -1882,5 +1925,6 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./js/script.js"></script>
     <script src="./js/validateForm.js"></script>
+    <script src="./js/addAmenidades.js"></script>
   </body>
 </html>

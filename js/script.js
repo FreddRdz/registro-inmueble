@@ -133,10 +133,15 @@ const inputTerrazaM2Casas = document.querySelector(
   '#inputNuevoProyectoM2DeTerrazasCasas'
 );
 
+const checkRadioTerrazaM2CasasNA = document.querySelector(
+  '#flexRadioTerrazasNACasas'
+);
+
 checkRadioTerrazaM2CasasTrue.addEventListener('change', () => {
   // Si el checkbox es sí, habilitaremos el campo
   if (checkRadioTerrazaM2CasasTrue.checked === true) {
     inputTerrazaM2Casas.disabled = false;
+    inputTerrazaM2Casas.value = '';
   }
 });
 
