@@ -19,52 +19,10 @@ selectDeveloper.addEventListener('change', () => {
 
 const selectProject = document.querySelector('.select-proyecto');
 const typeOfProjects = document.querySelector('.tipo-proyectos-container');
-// const checkRadiosContainerHouses = document.querySelector(
-//   '.tipo-proyecto-casas-container'
-// );
-// const checkRadiosContainerDepartements = document.querySelector(
-//   '.tipo-proyecto-departamentos-container'
-// );
-// const checkRadiosContainerTerrains = document.querySelector(
-//   '.tipo-proyecto-terrenos-container'
-// );
 
 const selectKindOfProject = document.querySelector(
   '.registrar-proyecto-container'
 );
-
-// console.log(checkRadiosContainerHouses);
-
-selectProject.addEventListener('change', () => {
-  //En caso que seleccionemos la elección por default, nos quitara los inputs de dabajo
-  if (selectProject.value === 'Selecciona...') {
-    // checkRadiosContainerHouses.classList.add('d-none');
-    // checkRadiosContainerDepartements.classList.add('d-none');
-    // checkRadiosContainerTerrains.classList.add('d-none');
-    selectKindOfProject.classList.add('d-none');
-    selectProjectContainerRegister.classList.add('d-none');
-  }
-
-  // Abrir inputs del nuevo proyecto
-  if (selectProject.value === 'Proyecto nuevo') {
-    selectKindOfProject.classList.remove('d-none');
-  }
-  // if (selectProject.value === 'Casas') {
-  //   checkRadiosContainerHouses.classList.toggle('d-none');
-  //   checkRadiosContainerDepartements.classList.add('d-none');
-  //   checkRadiosContainerTerrains.classList.add('d-none');
-  // }
-  // if (selectProject.value === 'Departamentos') {
-  //   checkRadiosContainerHouses.classList.add('d-none');
-  //   checkRadiosContainerDepartements.classList.toggle('d-none');
-  //   checkRadiosContainerTerrains.classList.add('d-none');
-  // }
-  // if (selectProject.value === 'Terrenos') {
-  //   checkRadiosContainerHouses.classList.add('d-none');
-  //   checkRadiosContainerDepartements.classList.add('d-none');
-  //   checkRadiosContainerTerrains.classList.toggle('d-none');
-  // }
-});
 
 const selectProjectRegister = document.querySelector(
   '.select-proyecto-registro'
@@ -88,15 +46,13 @@ const formContainerAmenidadesTerrenos = document.querySelector(
 
 // Variables de las características
 
-const formContainerCaracteristicasDepartamentos = document.querySelector(
-  '.form-caracteristicas-departamentos-container'
+const tablaContenedorDepartamentos = document.querySelector(
+  '.table-departamentos'
 );
-const formContainerCaracteristicasCasas = document.querySelector(
-  '.form-caracteristicas-casas-container'
-);
-const formContainerCaracteristicasTerrenos = document.querySelector(
-  '.form-caracteristicas-terrenos-container'
-);
+
+const tablaContenedorCasas = document.querySelector('.table-casas');
+
+const tablaContenedorTerrenos = document.querySelector('.table-terrenos');
 
 selectProjectRegister.addEventListener('change', () => {
   if (selectProjectRegister.value !== 'Selecciona...') {
@@ -190,9 +146,9 @@ const handleSelectCasasInputs = () => {
   formContainerAmenidadesTerrenos.classList.add('d-none');
 
   // Quitar caracteristicas de departamentos y terrenos para solamente dejar las de casa
-  formContainerCaracteristicasCasas.classList.remove('d-none');
-  formContainerCaracteristicasDepartamentos.classList.add('d-none');
-  formContainerCaracteristicasTerrenos.classList.add('d-none');
+  tablaContenedorCasas.classList.remove('d-none');
+  tablaContenedorDepartamentos.classList.add('d-none');
+  tablaContenedorTerrenos.classList.add('d-none');
 };
 
 const handleSelectDepartamentosInputs = () => {
@@ -202,9 +158,9 @@ const handleSelectDepartamentosInputs = () => {
   formContainerAmenidadesTerrenos.classList.add('d-none');
 
   // Quitar caracteristicas de departamentos y terrenos para solamente dejar las de casa
-  formContainerCaracteristicasCasas.classList.add('d-none');
-  formContainerCaracteristicasDepartamentos.classList.remove('d-none');
-  formContainerCaracteristicasTerrenos.classList.add('d-none');
+  tablaContenedorCasas.classList.add('d-none');
+  tablaContenedorDepartamentos.classList.remove('d-none');
+  tablaContenedorTerrenos.classList.add('d-none');
 };
 
 const handleSelectTerrenosInputs = () => {
@@ -214,9 +170,9 @@ const handleSelectTerrenosInputs = () => {
   formContainerAmenidadesTerrenos.classList.remove('d-none');
 
   // Quitar caracteristicas de departamentos y terrenos para solamente dejar las de casa
-  formContainerCaracteristicasCasas.classList.add('d-none');
-  formContainerCaracteristicasDepartamentos.classList.add('d-none');
-  formContainerCaracteristicasTerrenos.classList.remove('d-none');
+  tablaContenedorCasas.classList.add('d-none');
+  tablaContenedorDepartamentos.classList.add('d-none');
+  tablaContenedorTerrenos.classList.remove('d-none');
 };
 
 const handleCloseDeveloperContainer = () => {

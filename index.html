@@ -36,7 +36,6 @@
       <div class="container">
         <h2 class="mb-3">Registro</h2>
       </div>
-
       <div class="container register-container py-3">
         <h5 class="mb-2">Sección - Desarrollador</h5>
         <select
@@ -135,31 +134,20 @@
         <div
           class="container-proyecto animate__animated animate__backInLeft d-none"
         >
-          <h5 class="mb-2">Sección - Proyecto</h5>
+          <h5 class="mb-2">Proyecto nuevo</h5>
+          <label class="form-label">Tipo de proyecto</label>
           <select
-            class="form-select mb-3 select-proyecto"
+            class="form-select mb-3 select-proyecto-registro"
             aria-label="Default select example"
           >
             <option selected>Selecciona...</option>
-            <option value="Proyecto nuevo">Proyecto nuevo</option>
             <option value="Casas">Casas</option>
             <option value="Departamentos">Departamentos</option>
             <option value="Terrenos">Terrenos</option>
           </select>
           <div
             class="registrar-proyecto-container animate__animated animate__backInLeft d-none"
-          >
-            <label class="form-label">Tipo de proyecto</label>
-            <select
-              class="form-select mb-3 select-proyecto-registro"
-              aria-label="Default select example"
-            >
-              <option selected>Selecciona...</option>
-              <option value="Casas">Casas</option>
-              <option value="Departamentos">Departamentos</option>
-              <option value="Terrenos">Terrenos</option>
-            </select>
-          </div>
+          ></div>
           <div
             class="registrar-proyectos-container animate__animated animate__backInLeft d-none"
           >
@@ -986,922 +974,150 @@
                   data-bs-parent="#accordionFlushExample"
                 >
                   <div class="accordion-body">
-                    <div class="form-caracteristicas-casas-container">
-                      <div class="row">
-                        <div class="col-12 col-md-6">
-                          <div class="mb-3 input-campo">
-                            <label
-                              for="inputNuevoProyectoModeloCasas"
-                              class="form-label"
-                              >Modelo</label
+                    <table class="table table-casas">
+                      <thead>
+                        <tr>
+                          <th scope="col" class="text-center">#</th>
+                          <th scope="col" class="text-center">Estatus</th>
+                          <th scope="col" class="text-center">Editar</th>
+                          <th scope="col" class="text-center">Eliminar</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row" class="text-center">1</th>
+                          <td class="text-center">
+                            <i class="fa-solid fa-xmark fa-lg"></i>
+                          </td>
+                          <td class="text-center">
+                            <button class="button-table">
+                              <i class="fa-solid fa-pen fa-lg pen-icon"></i>
+                            </button>
+                          </td>
+                          <td class="text-center">
+                            <button class="button-table">
+                              <i class="fa-solid fa-trash fa-lg trash-icon"></i>
+                            </button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row" class="text-center">2</th>
+                          <td class="text-center">
+                            <i class="fa-solid fa-check fa-lg"></i>
+                          </td>
+                          <td class="text-center">
+                            <button
+                              class="button-table"
+                              data-bs-toggle="modal"
+                              data-bs-target="#modalFormCasas"
                             >
-                            <input
-                              type="text"
-                              autocomplete="off"
-                              class="form-control"
-                              id="inputNuevoProyectoModeloCasas"
-                            />
-                          </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                          <div class="mb-3 input-campo">
-                            <label
-                              for="inputNuevoProyectoPrecioCasas"
-                              class="form-label"
-                              >Precio</label
+                              <i class="fa-solid fa-pen fa-lg pen-icon"></i>
+                            </button>
+                          </td>
+                          <td class="text-center">
+                            <button class="button-table">
+                              <i class="fa-solid fa-trash fa-lg trash-icon"></i>
+                            </button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <table class="table table-departamentos">
+                      <thead>
+                        <tr>
+                          <th scope="col" class="text-center">#</th>
+                          <th scope="col" class="text-center">Estatus</th>
+                          <th scope="col" class="text-center">Editar</th>
+                          <th scope="col" class="text-center">Eliminar</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row" class="text-center">1</th>
+                          <td class="text-center">
+                            <i class="fa-solid fa-xmark fa-lg"></i>
+                          </td>
+                          <td class="text-center">
+                            <button class="button-table">
+                              <i class="fa-solid fa-pen fa-lg pen-icon"></i>
+                            </button>
+                          </td>
+                          <td class="text-center">
+                            <button class="button-table">
+                              <i class="fa-solid fa-trash fa-lg trash-icon"></i>
+                            </button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row" class="text-center">2</th>
+                          <td class="text-center">
+                            <i class="fa-solid fa-check fa-lg"></i>
+                          </td>
+                          <td class="text-center">
+                            <button
+                              class="button-table"
+                              data-bs-toggle="modal"
+                              data-bs-target="#modalFormDepartamentos"
                             >
-                            <input
-                              type="number"
-                              autocomplete="off"
-                              class="form-control"
-                              id="inputNuevoProyectoPrecioCasas"
-                            />
-                          </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                          <div class="mb-3 input-campo">
-                            <label
-                              for="inputNuevoProyectoM2ConstruccionCasas"
-                              class="form-label"
-                              >M<sup>2</sup> de construcción</label
+                              <i class="fa-solid fa-pen fa-lg pen-icon"></i>
+                            </button>
+                          </td>
+                          <td class="text-center">
+                            <button class="button-table">
+                              <i class="fa-solid fa-trash fa-lg trash-icon"></i>
+                            </button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <table class="table table-terrenos">
+                      <thead>
+                        <tr>
+                          <th scope="col" class="text-center">#</th>
+                          <th scope="col" class="text-center">Estatus</th>
+                          <th scope="col" class="text-center">Editar</th>
+                          <th scope="col" class="text-center">Eliminar</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row" class="text-center">1</th>
+                          <td class="text-center">
+                            <i class="fa-solid fa-xmark fa-lg"></i>
+                          </td>
+                          <td class="text-center">
+                            <button class="button-table">
+                              <i class="fa-solid fa-pen fa-lg pen-icon"></i>
+                            </button>
+                          </td>
+                          <td class="text-center">
+                            <button class="button-table">
+                              <i class="fa-solid fa-trash fa-lg trash-icon"></i>
+                            </button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row" class="text-center">2</th>
+                          <td class="text-center">
+                            <i class="fa-solid fa-check fa-lg"></i>
+                          </td>
+                          <td class="text-center">
+                            <button
+                              class="button-table"
+                              data-bs-toggle="modal"
+                              data-bs-target="#modalFormTerrenos"
                             >
-                            <input
-                              type="number"
-                              autocomplete="off"
-                              class="form-control"
-                              id="inputNuevoProyectoM2ConstruccionCasas"
-                            />
-                          </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                          <div class="mb-3 input-campo">
-                            <label
-                              for="inputNuevoProyectoM2TerrenoCasas"
-                              class="form-label"
-                              >M<sup>2</sup> de terreno</label
-                            >
-                            <input
-                              type="number"
-                              autocomplete="off"
-                              class="form-control"
-                              id="inputNuevoProyectoM2TerrenoCasas"
-                            />
-                          </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                          <div class="mb-3 input-campo">
-                            <label
-                              for="inputNuevoProyectoNivelesCasas"
-                              class="form-label"
-                              >Niveles</label
-                            >
-                            <input
-                              type="number"
-                              autocomplete="off"
-                              class="form-control"
-                              id="inputNuevoProyectoNivelesCasas"
-                            />
-                          </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                          <div class="mb-3 input-campo">
-                            <label
-                              for="inputNuevoProyectoRecamarasCasas"
-                              class="form-label"
-                              >Recamaras</label
-                            >
-                            <input
-                              type="number"
-                              autocomplete="off"
-                              class="form-control"
-                              id="inputNuevoProyectoRecamarasCasas"
-                            />
-                          </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                          <div class="mb-3 input-campo">
-                            <label
-                              for="inputNuevoProyectoBaniosCasas"
-                              class="form-label"
-                              >Baños</label
-                            >
-                            <input
-                              type="number"
-                              autocomplete="off"
-                              class="form-control"
-                              id="inputNuevoProyectoBaniosCasas"
-                            />
-                          </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                          <div class="mb-3 input-campo">
-                            <label
-                              for="inputNuevoProyectoMedioBaniosCasas"
-                              class="form-label"
-                              >1/2 Baños</label
-                            >
-                            <input
-                              type="number"
-                              autocomplete="off"
-                              class="form-control"
-                              id="inputNuevoProyectoMedioBaniosCasas"
-                            />
-                          </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                          <div class="mb-3 radio-check-terrazas-casas">
-                            <label
-                              for="flexRadioTerrazaCasas"
-                              class="form-label"
-                              >Terraza</label
-                            >
-                            <div class="form-check">
-                              <input
-                                class="form-check-input"
-                                type="radio"
-                                name="flexRadioWalkinTerrazaCasas"
-                                id="flexRadioTerrazasTrueCasas"
-                              />
-                              <label
-                                class="form-check-label"
-                                for="flexRadioTerrazasTrueCasas"
-                              >
-                                Sí
-                              </label>
-                            </div>
-                            <div class="form-check">
-                              <input
-                                class="form-check-input"
-                                type="radio"
-                                name="flexRadioWalkinTerrazaCasas"
-                                id="flexRadioTerrazasFalseCasas"
-                              />
-                              <label
-                                class="form-check-label"
-                                for="flexRadioTerrazasFalseCasas"
-                              >
-                                No
-                              </label>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                          <div class="mb-3">
-                            <label
-                              for="inputNuevoProyectoM2DeTerrazasCasas"
-                              class="form-label"
-                              >M<sup>2</sup> de terrazas</label
-                            >
-                            <input
-                              type="text"
-                              autocomplete="off"
-                              class="form-control"
-                              id="inputNuevoProyectoM2DeTerrazasCasas"
-                              disabled
-                            />
-                          </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                          <div class="mb-3 input-campo">
-                            <label
-                              for="inputNuevoProyectoCondicionesEntrega"
-                              class="form-label"
-                              >Condiciones de entrega</label
-                            >
-                            <input
-                              type="text"
-                              autocomplete="off"
-                              class="form-control"
-                              id="inputNuevoProyectoCondicionesEntrega"
-                            />
-                          </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                          <div class="mb-3 input-campo">
-                            <label
-                              for="inputNuevoProyectoCajonesEstacionamiento"
-                              class="form-label"
-                              >Cajones de estacionamiento</label
-                            >
-                            <input
-                              type="number"
-                              autocomplete="off"
-                              class="form-control"
-                              id="inputNuevoProyectoCajonesEstacionamiento"
-                            />
-                          </div>
-                        </div>
-                        <div class="mb-3 radio-check">
-                          <label
-                            for="inputNuevoProyectoWalkinClosetCasas"
-                            class="form-label"
-                            >Walking closet</label
-                          >
-                          <div class="form-check">
-                            <input
-                              class="form-check-input"
-                              type="radio"
-                              name="flexRadioWalkinClosetCasas"
-                              id="flexRadioWalkinClosetTrueCasas"
-                            />
-                            <label
-                              class="form-check-label"
-                              for="flexRadioWalkinClosetTrueCasas"
-                            >
-                              Sí
-                            </label>
-                          </div>
-                          <div class="form-check">
-                            <input
-                              class="form-check-input"
-                              type="radio"
-                              name="flexRadioWalkinClosetCasas"
-                              id="flexRadioWalkinClosetFalseCasas"
-                            />
-                            <label
-                              class="form-check-label"
-                              for="flexRadioWalkinClosetFalseCasas"
-                            >
-                              No
-                            </label>
-                          </div>
-                        </div>
-                        <div class="mb-3 radio-check">
-                          <label
-                            for="inputNuevoProyectoFlexCasas"
-                            class="form-label"
-                            >Flex</label
-                          >
-                          <div class="form-check">
-                            <input
-                              class="form-check-input"
-                              type="radio"
-                              name="flexRadioFlexCasas"
-                              id="flexRadioFlexTrueCasas"
-                            />
-                            <label
-                              class="form-check-label"
-                              for="flexRadioFlexTrueCasas"
-                            >
-                              Sí
-                            </label>
-                          </div>
-                          <div class="form-check">
-                            <input
-                              class="form-check-input"
-                              type="radio"
-                              name="flexRadioFlexCasas"
-                              id="flexRadioFlexFalseCasas"
-                            />
-                            <label
-                              class="form-check-label"
-                              for="flexRadioFlexFalseCasas"
-                            >
-                              No
-                            </label>
-                          </div>
-                        </div>
-                        <div class="mb-3 radio-check">
-                          <label
-                            for="inputNuevoProyectoLockOffCasas"
-                            class="form-label"
-                            >Lock off</label
-                          >
-                          <div class="form-check">
-                            <input
-                              class="form-check-input"
-                              type="radio"
-                              name="flexRadioLockOffCasas"
-                              id="flexRadioLockOffTrueCasas"
-                            />
-                            <label
-                              class="form-check-label"
-                              for="flexRadioLockOffTrueCasas"
-                            >
-                              Sí
-                            </label>
-                          </div>
-                          <div class="form-check">
-                            <input
-                              class="form-check-input"
-                              type="radio"
-                              name="flexRadioLockOffCasas"
-                              id="flexRadioLockOffFalseCasas"
-                            />
-                            <label
-                              class="form-check-label"
-                              for="flexRadioLockOffFalseCasas"
-                            >
-                              No
-                            </label>
-                          </div>
-                        </div>
-                        <div class="mb-3 radio-check">
-                          <label
-                            for="inputNuevoProyectoHabServicioCasas"
-                            class="form-label"
-                            >Habitación de servicio</label
-                          >
-                          <div class="form-check">
-                            <input
-                              class="form-check-input"
-                              type="radio"
-                              name="flexRadioHabServicioCasas"
-                              id="flexRadioHabServicioTrueCasas"
-                            />
-                            <label
-                              class="form-check-label"
-                              for="flexRadioHabServicioTrueCasas"
-                            >
-                              Sí
-                            </label>
-                          </div>
-                          <div class="form-check">
-                            <input
-                              class="form-check-input"
-                              type="radio"
-                              name="flexRadioHabServicioCasas"
-                              id="flexRadioHabServicioFalseCasas"
-                            />
-                            <label
-                              class="form-check-label"
-                              for="flexRadioHabServicioFalseCasas"
-                            >
-                              No
-                            </label>
-                          </div>
-                        </div>
-                        <div class="mb-3 radio-check">
-                          <label
-                            for="inputNuevoProyectoBodegaCasas"
-                            class="form-label"
-                            >Bodega</label
-                          >
-                          <div class="form-check">
-                            <input
-                              class="form-check-input"
-                              type="radio"
-                              name="flexRadioBodegaCasas"
-                              id="flexRadioBodegaTrueCasas"
-                            />
-                            <label
-                              class="form-check-label"
-                              for="flexRadioBodegaTrueCasas"
-                            >
-                              Sí
-                            </label>
-                          </div>
-                          <div class="form-check">
-                            <input
-                              class="form-check-input"
-                              type="radio"
-                              name="flexRadioBodegaCasas"
-                              id="flexRadioBodegaFalseCasas"
-                            />
-                            <label
-                              class="form-check-label"
-                              for="flexRadioBodegaFalseCasas"
-                            >
-                              No
-                            </label>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="form-caracteristicas-departamentos-container">
-                      <div class="row">
-                        <div class="col-12 col-md-6">
-                          <div class="mb-3 input-campo">
-                            <label
-                              for="inputNuevoProyectoModeloDepartamentos"
-                              class="form-label"
-                              >Modelo</label
-                            >
-                            <input
-                              type="text"
-                              autocomplete="off"
-                              class="form-control"
-                              id="inputNuevoProyectoModeloDepartamentos"
-                            />
-                          </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                          <div class="mb-3 input-campo">
-                            <label
-                              for="inputNuevoProyectoPrecioDepartamentos"
-                              class="form-label"
-                              >Precio</label
-                            >
-                            <input
-                              type="number"
-                              autocomplete="off"
-                              class="form-control"
-                              id="inputNuevoProyectoPrecioDepartamentos"
-                            />
-                          </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                          <div class="mb-3 input-campo">
-                            <label
-                              for="inputNuevoProyectoM2Departamentos"
-                              class="form-label"
-                              >M<sup>2</sup></label
-                            >
-                            <input
-                              type="number"
-                              autocomplete="off"
-                              class="form-control"
-                              id="inputNuevoProyectoM2Departamentos"
-                            />
-                          </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                          <div class="mb-3 input-campo">
-                            <label
-                              for="inputNuevoProyectoPrecioPorM2Departamentos"
-                              class="form-label"
-                              >Precio / M<sup>2</sup></label
-                            >
-                            <input
-                              type="number"
-                              autocomplete="off"
-                              class="form-control"
-                              id="inputNuevoProyectoPrecioPorM2Departamentos"
-                            />
-                          </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                          <div class="mb-3 input-campo">
-                            <label
-                              for="inputNuevoProyectoRecamarasDepartamentos"
-                              class="form-label"
-                              >Recamaras</label
-                            >
-                            <input
-                              type="number"
-                              autocomplete="off"
-                              class="form-control"
-                              id="inputNuevoProyectoRecamarasDepartamentos"
-                            />
-                          </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                          <div class="mb-3 input-campo">
-                            <label
-                              for="inputNuevoProyectoBaniosDepartamentos"
-                              class="form-label"
-                              >Baños</label
-                            >
-                            <input
-                              type="number"
-                              autocomplete="off"
-                              class="form-control"
-                              id="inputNuevoProyectoBaniosDepartamentos"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      <div class="mb-3">
-                        <label
-                          for="inputNuevoProyectoMedioBaniosDepartamentos"
-                          class="form-label input-campo"
-                          >1/2 Baños</label
-                        >
-                        <input
-                          type="number"
-                          autocomplete="off"
-                          class="form-control"
-                          id="inputNuevoProyectoMedioBaniosDepartamentos"
-                        />
-                      </div>
-                      <div class="row">
-                        <div class="col-12 col-md-6">
-                          <div class="mb-3 radio-check-terrazas-depas">
-                            <label
-                              for="flexRadioWalkinTerrazaTrueDepartamentos"
-                              class="form-label"
-                              >Terraza</label
-                            >
-                            <div class="form-check">
-                              <input
-                                class="form-check-input"
-                                type="radio"
-                                name="flexRadioWalkinTerrazaDepartamentos"
-                                id="flexRadioWalkinTerrazaTrueDepartamentos"
-                              />
-                              <label
-                                class="form-check-label"
-                                for="flexRadioWalkinTerrazaTrueDepartamentos"
-                              >
-                                Sí
-                              </label>
-                            </div>
-                            <div class="form-check">
-                              <input
-                                class="form-check-input"
-                                type="radio"
-                                name="flexRadioWalkinTerrazaDepartamentos"
-                                id="flexRadioWalkinTerrazaFalseDepartamentos"
-                              />
-                              <label
-                                class="form-check-label"
-                                for="flexRadioWalkinTerrazaFalseDepartamentos"
-                              >
-                                No
-                              </label>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                          <div class="mb-3">
-                            <label
-                              for="inputNuevoProyectoM2DeTerrazasDepartamentos"
-                              class="form-label"
-                              >M<sup>2</sup> de terrazas</label
-                            >
-                            <input
-                              type="number"
-                              autocomplete="off"
-                              class="form-control"
-                              id="inputNuevoProyectoM2DeTerrazasDepartamentos"
-                              disabled
-                            />
-                          </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                          <div class="mb-3 input-campo">
-                            <label
-                              for="inputNuevoProyectoM2TerrenoDepartamentos"
-                              class="form-label"
-                              >Cajones de estacionamiento</label
-                            >
-                            <input
-                              type="number"
-                              autocomplete="off"
-                              class="form-control"
-                              id="inputNuevoProyectoM2TerrenoDepartamentos"
-                            />
-                          </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                          <div class="mb-3 input-campo">
-                            <label
-                              for="inputNuevoProyectoM2TerrenoDepartamentos"
-                              class="form-label"
-                              >Condiciones de entrega</label
-                            >
-                            <input
-                              type="text"
-                              autocomplete="off"
-                              class="form-control"
-                              id="inputNuevoProyectoM2TerrenoDepartamentos"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      <div class="mb-3 radio-check-depas">
-                        <label
-                          for="inputNuevoProyectoWalkinClosetDepartamentos"
-                          class="form-label"
-                          >Walking closet</label
-                        >
-                        <div class="form-check">
-                          <input
-                            class="form-check-input"
-                            type="radio"
-                            name="flexRadioWalkinClosetDepartamentos"
-                            id="flexRadioWalkinClosetTrueDepartamentos"
-                          />
-                          <label
-                            class="form-check-label"
-                            for="flexRadioWalkinClosetTrueDepartamentos"
-                          >
-                            Sí
-                          </label>
-                        </div>
-                        <div class="form-check">
-                          <input
-                            class="form-check-input"
-                            type="radio"
-                            name="flexRadioWalkinClosetDepartamentos"
-                            id="flexRadioWalkinClosetFalseDepartamentos"
-                          />
-                          <label
-                            class="form-check-label"
-                            for="flexRadioWalkinClosetFalseDepartamentos"
-                          >
-                            No
-                          </label>
-                        </div>
-                      </div>
-                      <div class="mb-3 radio-check-depas">
-                        <label
-                          for="inputNuevoProyectoFlexDepartamentos"
-                          class="form-label"
-                          >Flex</label
-                        >
-                        <div class="form-check">
-                          <input
-                            class="form-check-input"
-                            type="radio"
-                            name="flexRadioFlexDepartamentos"
-                            id="flexRadioFlexTrueDepartamentos"
-                          />
-                          <label
-                            class="form-check-label"
-                            for="flexRadioFlexTrueDepartamentos"
-                          >
-                            Sí
-                          </label>
-                        </div>
-                        <div class="form-check">
-                          <input
-                            class="form-check-input"
-                            type="radio"
-                            name="flexRadioFlexDepartamentos"
-                            id="flexRadioWalkinClosetFalseDepartamentos"
-                          />
-                          <label
-                            class="form-check-label"
-                            for="flexRadioWalkinClosetFalseDepartamentos"
-                          >
-                            No
-                          </label>
-                        </div>
-                      </div>
-                      <div class="mb-3 radio-check-depas">
-                        <label
-                          for="inputNuevoProyectoLockOffDepartamentos"
-                          class="form-label"
-                          >Lock off</label
-                        >
-                        <div class="form-check">
-                          <input
-                            class="form-check-input"
-                            type="radio"
-                            name="flexRadioLockOffDepartamentos"
-                            id="flexRadioLockOffTrueDepartamentos"
-                          />
-                          <label
-                            class="form-check-label"
-                            for="flexRadioLockOffTrueDepartamentos"
-                          >
-                            Sí
-                          </label>
-                        </div>
-                        <div class="form-check">
-                          <input
-                            class="form-check-input"
-                            type="radio"
-                            name="flexRadioLockOffDepartamentos"
-                            id="flexRadioLockOffFalseDepartamentos"
-                          />
-                          <label
-                            class="form-check-label"
-                            for="flexRadioLockOffFalseDepartamentos"
-                          >
-                            No
-                          </label>
-                        </div>
-                      </div>
-                      <div class="mb-3 radio-check-depas">
-                        <label
-                          for="inputNuevoProyectoHabServicioDepartamentos"
-                          class="form-label"
-                          >Habitación de servicio</label
-                        >
-                        <div class="form-check">
-                          <input
-                            class="form-check-input"
-                            type="radio"
-                            name="flexRadioHabServicioDepartamentos"
-                            id="flexRadioHabServicioTrueDepartamentos"
-                          />
-                          <label
-                            class="form-check-label"
-                            for="flexRadioHabServicioTrueDepartamentos"
-                          >
-                            Sí
-                          </label>
-                        </div>
-                        <div class="form-check">
-                          <input
-                            class="form-check-input"
-                            type="radio"
-                            name="flexRadioHabServicioDepartamentos"
-                            id="flexRadioHabServicioFalseDepartamentos"
-                          />
-                          <label
-                            class="form-check-label"
-                            for="flexRadioHabServicioFalseDepartamentos"
-                          >
-                            No
-                          </label>
-                        </div>
-                      </div>
-                      <div class="mb-3 radio-check-depas">
-                        <label
-                          for="inputNuevoProyectoBodegaDepartamentos"
-                          class="form-label"
-                          >Bodega</label
-                        >
-                        <div class="form-check">
-                          <input
-                            class="form-check-input"
-                            type="radio"
-                            name="flexRadioBodegaDepartamentos"
-                            id="flexRadioBodegaTrueDepartamentos"
-                          />
-                          <label
-                            class="form-check-label"
-                            for="flexRadioBodegaTrueDepartamentos"
-                          >
-                            Sí
-                          </label>
-                        </div>
-                        <div class="form-check">
-                          <input
-                            class="form-check-input"
-                            type="radio"
-                            name="flexRadioBodegaDepartamentos"
-                            id="flexRadioBodegaFalseDepartamentos"
-                          />
-                          <label
-                            class="form-check-label"
-                            for="flexRadioBodegaFalseCasas"
-                          >
-                            No
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="form-caracteristicas-terrenos-container">
-                      <div class="row">
-                        <div class="col-12 col-md-6">
-                          <div class="mb-3 input-campo">
-                            <label
-                              for="inputNuevoProyectoModeloTerrenos"
-                              class="form-label"
-                              >Modelo</label
-                            >
-                            <input
-                              type="text"
-                              autocomplete="off"
-                              class="form-control"
-                              id="inputNuevoProyectoModeloTerrenos"
-                            />
-                          </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                          <div class="mb-3 input-campo">
-                            <label
-                              for="inputNuevoProyectoPrecioTerrenos"
-                              class="form-label"
-                              >Precio</label
-                            >
-                            <input
-                              type="number"
-                              autocomplete="off"
-                              class="form-control"
-                              id="inputNuevoProyectoPrecioTerrenos"
-                            />
-                          </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                          <div class="mb-3 input-campo">
-                            <label
-                              for="inputNuevoProyectoM2TerrenoTerrenos"
-                              class="form-label"
-                              >M<sup>2</sup> de terreno</label
-                            >
-                            <input
-                              type="number"
-                              autocomplete="off"
-                              class="form-control"
-                              id="inputNuevoProyectoM2TerrenoTerrenos"
-                            />
-                          </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                          <div class="mb-3 input-campo">
-                            <label
-                              for="inputNuevoProyectoFrenteTerrenos"
-                              class="form-label"
-                              >Frente</label
-                            >
-                            <input
-                              type="number"
-                              autocomplete="off"
-                              class="form-control"
-                              id="inputNuevoProyectoFrenteTerrenos"
-                            />
-                          </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                          <div class="mb-3 input-campo">
-                            <label
-                              for="inputNuevoProyectoFondoTerrenos"
-                              class="form-label"
-                              >Fondo</label
-                            >
-                            <input
-                              type="number"
-                              autocomplete="off"
-                              class="form-control"
-                              id="inputNuevoProyectoFondoTerrenos"
-                            />
-                          </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                          <div class="mb-3 input-campo">
-                            <label
-                              for="inputNuevoProyectoPrecioPorM2Terrenos"
-                              class="form-label"
-                              >Precio / M<sup>2</sup></label
-                            >
-                            <input
-                              type="number"
-                              autocomplete="off"
-                              class="form-control"
-                              id="inputNuevoProyectoPrecioPorM2Terrenos"
-                            />
-                          </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                          <div class="mb-3 input-campo">
-                            <label
-                              for="inputNuevoProyectoCusTerrenos"
-                              class="form-label"
-                              >Cus</label
-                            >
-                            <input
-                              type="number"
-                              autocomplete="off"
-                              class="form-control"
-                              id="inputNuevoProyectoCusTerrenos"
-                            />
-                          </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                          <div class="mb-3 input-campo">
-                            <label
-                              for="inputNuevoProyectoCusM2Terrenos"
-                              class="form-label"
-                              >Cus total en m<sup>2</sup></label
-                            >
-                            <input
-                              type="number"
-                              autocomplete="off"
-                              class="form-control"
-                              id="inputNuevoProyectoCusM2Terrenos"
-                            />
-                          </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                          <div class="mb-3 input-campo">
-                            <label
-                              for="inputNuevoProyectoCosTerrenos"
-                              class="form-label"
-                              >Cos</label
-                            >
-                            <input
-                              type="number"
-                              autocomplete="off"
-                              class="form-control"
-                              id="inputNuevoProyectoCosTerrenos"
-                            />
-                          </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                          <div class="mb-3 input-campo">
-                            <label
-                              for="inputNuevoProyectoCosM2Terrenos"
-                              class="form-label"
-                              >Cos total en m<sup>2</sup></label
-                            >
-                            <input
-                              type="number"
-                              autocomplete="off"
-                              class="form-control"
-                              id="inputNuevoProyectoCosM2Terrenos"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      <div class="mb-3 input-campo">
-                        <label
-                          for="inputNuevoProyectoAlturaMaximaTerrenos"
-                          class="form-label"
-                          >Altura máxima (en pisos)</label
-                        >
-                        <input
-                          type="number"
-                          autocomplete="off"
-                          class="form-control"
-                          id="inputNuevoProyectoAlturaMaximaTerrenos"
-                        />
-                      </div>
-                    </div>
+                              <i class="fa-solid fa-pen fa-lg pen-icon"></i>
+                            </button>
+                          </td>
+                          <td class="text-center">
+                            <button class="button-table">
+                              <i class="fa-solid fa-trash fa-lg trash-icon"></i>
+                            </button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
                 </div>
               </div>
@@ -1911,6 +1127,1045 @@
                 Registrar proyecto
               </button>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      id="modalFormCasas"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Tipología - Casas
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-dialog modal-dialog-scrollable">
+            <div class="container">
+              <div class="form-caracteristicas-casas-container">
+                <div class="row">
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 input-campo">
+                      <label
+                        for="inputNuevoProyectoModeloCasas"
+                        class="form-label"
+                        >Modelo</label
+                      >
+                      <input
+                        type="text"
+                        autocomplete="off"
+                        class="form-control"
+                        id="inputNuevoProyectoModeloCasas"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 input-campo">
+                      <label
+                        for="inputNuevoProyectoPrecioCasas"
+                        class="form-label"
+                        >Precio</label
+                      >
+                      <input
+                        type="number"
+                        autocomplete="off"
+                        class="form-control"
+                        id="inputNuevoProyectoPrecioCasas"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 input-campo">
+                      <label
+                        for="inputNuevoProyectoM2ConstruccionCasas"
+                        class="form-label"
+                        >M<sup>2</sup> de construcción</label
+                      >
+                      <input
+                        type="number"
+                        autocomplete="off"
+                        class="form-control"
+                        id="inputNuevoProyectoM2ConstruccionCasas"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 input-campo">
+                      <label
+                        for="inputNuevoProyectoM2TerrenoCasas"
+                        class="form-label"
+                        >M<sup>2</sup> de terreno</label
+                      >
+                      <input
+                        type="number"
+                        autocomplete="off"
+                        class="form-control"
+                        id="inputNuevoProyectoM2TerrenoCasas"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 input-campo">
+                      <label
+                        for="inputNuevoProyectoNivelesCasas"
+                        class="form-label"
+                        >Niveles</label
+                      >
+                      <input
+                        type="number"
+                        autocomplete="off"
+                        class="form-control"
+                        id="inputNuevoProyectoNivelesCasas"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 input-campo">
+                      <label
+                        for="inputNuevoProyectoRecamarasCasas"
+                        class="form-label"
+                        >Recamaras</label
+                      >
+                      <input
+                        type="number"
+                        autocomplete="off"
+                        class="form-control"
+                        id="inputNuevoProyectoRecamarasCasas"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 input-campo">
+                      <label
+                        for="inputNuevoProyectoBaniosCasas"
+                        class="form-label"
+                        >Baños</label
+                      >
+                      <input
+                        type="number"
+                        autocomplete="off"
+                        class="form-control"
+                        id="inputNuevoProyectoBaniosCasas"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 input-campo">
+                      <label
+                        for="inputNuevoProyectoMedioBaniosCasas"
+                        class="form-label"
+                        >1/2 Baños</label
+                      >
+                      <input
+                        type="number"
+                        autocomplete="off"
+                        class="form-control"
+                        id="inputNuevoProyectoMedioBaniosCasas"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 radio-check-terrazas-casas">
+                      <label for="flexRadioTerrazaCasas" class="form-label"
+                        >Terraza</label
+                      >
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="flexRadioWalkinTerrazaCasas"
+                          id="flexRadioTerrazasTrueCasas"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="flexRadioTerrazasTrueCasas"
+                        >
+                          Sí
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="flexRadioWalkinTerrazaCasas"
+                          id="flexRadioTerrazasFalseCasas"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="flexRadioTerrazasFalseCasas"
+                        >
+                          No
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3">
+                      <label
+                        for="inputNuevoProyectoM2DeTerrazasCasas"
+                        class="form-label"
+                        >M<sup>2</sup> de terrazas</label
+                      >
+                      <input
+                        type="text"
+                        autocomplete="off"
+                        class="form-control"
+                        id="inputNuevoProyectoM2DeTerrazasCasas"
+                        disabled
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 input-campo">
+                      <label
+                        for="inputNuevoProyectoCondicionesEntrega"
+                        class="form-label"
+                        >Condiciones de entrega</label
+                      >
+                      <input
+                        type="text"
+                        autocomplete="off"
+                        class="form-control"
+                        id="inputNuevoProyectoCondicionesEntrega"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 input-campo">
+                      <label
+                        for="inputNuevoProyectoCajonesEstacionamiento"
+                        class="form-label"
+                        >Cajones de estacionamiento</label
+                      >
+                      <input
+                        type="number"
+                        autocomplete="off"
+                        class="form-control"
+                        id="inputNuevoProyectoCajonesEstacionamiento"
+                      />
+                    </div>
+                  </div>
+                  <div class="mb-3 radio-check">
+                    <label
+                      for="inputNuevoProyectoWalkinClosetCasas"
+                      class="form-label"
+                      >Walking closet</label
+                    >
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="flexRadioWalkinClosetCasas"
+                        id="flexRadioWalkinClosetTrueCasas"
+                      />
+                      <label
+                        class="form-check-label"
+                        for="flexRadioWalkinClosetTrueCasas"
+                      >
+                        Sí
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="flexRadioWalkinClosetCasas"
+                        id="flexRadioWalkinClosetFalseCasas"
+                      />
+                      <label
+                        class="form-check-label"
+                        for="flexRadioWalkinClosetFalseCasas"
+                      >
+                        No
+                      </label>
+                    </div>
+                  </div>
+                  <div class="mb-3 radio-check">
+                    <label for="inputNuevoProyectoFlexCasas" class="form-label"
+                      >Flex</label
+                    >
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="flexRadioFlexCasas"
+                        id="flexRadioFlexTrueCasas"
+                      />
+                      <label
+                        class="form-check-label"
+                        for="flexRadioFlexTrueCasas"
+                      >
+                        Sí
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="flexRadioFlexCasas"
+                        id="flexRadioFlexFalseCasas"
+                      />
+                      <label
+                        class="form-check-label"
+                        for="flexRadioFlexFalseCasas"
+                      >
+                        No
+                      </label>
+                    </div>
+                  </div>
+                  <div class="mb-3 radio-check">
+                    <label
+                      for="inputNuevoProyectoLockOffCasas"
+                      class="form-label"
+                      >Lock off</label
+                    >
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="flexRadioLockOffCasas"
+                        id="flexRadioLockOffTrueCasas"
+                      />
+                      <label
+                        class="form-check-label"
+                        for="flexRadioLockOffTrueCasas"
+                      >
+                        Sí
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="flexRadioLockOffCasas"
+                        id="flexRadioLockOffFalseCasas"
+                      />
+                      <label
+                        class="form-check-label"
+                        for="flexRadioLockOffFalseCasas"
+                      >
+                        No
+                      </label>
+                    </div>
+                  </div>
+                  <div class="mb-3 radio-check">
+                    <label
+                      for="inputNuevoProyectoHabServicioCasas"
+                      class="form-label"
+                      >Habitación de servicio</label
+                    >
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="flexRadioHabServicioCasas"
+                        id="flexRadioHabServicioTrueCasas"
+                      />
+                      <label
+                        class="form-check-label"
+                        for="flexRadioHabServicioTrueCasas"
+                      >
+                        Sí
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="flexRadioHabServicioCasas"
+                        id="flexRadioHabServicioFalseCasas"
+                      />
+                      <label
+                        class="form-check-label"
+                        for="flexRadioHabServicioFalseCasas"
+                      >
+                        No
+                      </label>
+                    </div>
+                  </div>
+                  <div class="mb-3 radio-check">
+                    <label
+                      for="inputNuevoProyectoBodegaCasas"
+                      class="form-label"
+                      >Bodega</label
+                    >
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="flexRadioBodegaCasas"
+                        id="flexRadioBodegaTrueCasas"
+                      />
+                      <label
+                        class="form-check-label"
+                        for="flexRadioBodegaTrueCasas"
+                      >
+                        Sí
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="flexRadioBodegaCasas"
+                        id="flexRadioBodegaFalseCasas"
+                      />
+                      <label
+                        class="form-check-label"
+                        for="flexRadioBodegaFalseCasas"
+                      >
+                        No
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cerrar
+            </button>
+            <button type="button" class="btn btn-primary">
+              Guardar cambios
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      id="modalFormDepartamentos"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Tipología - Departamentos
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-dialog modal-dialog-scrollable">
+            <div class="container">
+              <div class="form-caracteristicas-departamentos-container">
+                <div class="row">
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 input-campo">
+                      <label
+                        for="inputNuevoProyectoModeloDepartamentos"
+                        class="form-label"
+                        >Modelo</label
+                      >
+                      <input
+                        type="text"
+                        autocomplete="off"
+                        class="form-control"
+                        id="inputNuevoProyectoModeloDepartamentos"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 input-campo">
+                      <label
+                        for="inputNuevoProyectoPrecioDepartamentos"
+                        class="form-label"
+                        >Precio</label
+                      >
+                      <input
+                        type="number"
+                        autocomplete="off"
+                        class="form-control"
+                        id="inputNuevoProyectoPrecioDepartamentos"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 input-campo">
+                      <label
+                        for="inputNuevoProyectoM2Departamentos"
+                        class="form-label"
+                        >M<sup>2</sup></label
+                      >
+                      <input
+                        type="number"
+                        autocomplete="off"
+                        class="form-control"
+                        id="inputNuevoProyectoM2Departamentos"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 input-campo">
+                      <label
+                        for="inputNuevoProyectoPrecioPorM2Departamentos"
+                        class="form-label"
+                        >Precio / M<sup>2</sup></label
+                      >
+                      <input
+                        type="number"
+                        autocomplete="off"
+                        class="form-control"
+                        id="inputNuevoProyectoPrecioPorM2Departamentos"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 input-campo">
+                      <label
+                        for="inputNuevoProyectoRecamarasDepartamentos"
+                        class="form-label"
+                        >Recamaras</label
+                      >
+                      <input
+                        type="number"
+                        autocomplete="off"
+                        class="form-control"
+                        id="inputNuevoProyectoRecamarasDepartamentos"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 input-campo">
+                      <label
+                        for="inputNuevoProyectoBaniosDepartamentos"
+                        class="form-label"
+                        >Baños</label
+                      >
+                      <input
+                        type="number"
+                        autocomplete="off"
+                        class="form-control"
+                        id="inputNuevoProyectoBaniosDepartamentos"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label
+                    for="inputNuevoProyectoMedioBaniosDepartamentos"
+                    class="form-label input-campo"
+                    >1/2 Baños</label
+                  >
+                  <input
+                    type="number"
+                    autocomplete="off"
+                    class="form-control"
+                    id="inputNuevoProyectoMedioBaniosDepartamentos"
+                  />
+                </div>
+                <div class="row">
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 radio-check-terrazas-depas">
+                      <label
+                        for="flexRadioWalkinTerrazaTrueDepartamentos"
+                        class="form-label"
+                        >Terraza</label
+                      >
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="flexRadioWalkinTerrazaDepartamentos"
+                          id="flexRadioWalkinTerrazaTrueDepartamentos"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="flexRadioWalkinTerrazaTrueDepartamentos"
+                        >
+                          Sí
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="flexRadioWalkinTerrazaDepartamentos"
+                          id="flexRadioWalkinTerrazaFalseDepartamentos"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="flexRadioWalkinTerrazaFalseDepartamentos"
+                        >
+                          No
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3">
+                      <label
+                        for="inputNuevoProyectoM2DeTerrazasDepartamentos"
+                        class="form-label"
+                        >M<sup>2</sup> de terrazas</label
+                      >
+                      <input
+                        type="number"
+                        autocomplete="off"
+                        class="form-control"
+                        id="inputNuevoProyectoM2DeTerrazasDepartamentos"
+                        disabled
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 input-campo">
+                      <label
+                        for="inputNuevoProyectoM2TerrenoDepartamentos"
+                        class="form-label"
+                        >Cajones de estacionamiento</label
+                      >
+                      <input
+                        type="number"
+                        autocomplete="off"
+                        class="form-control"
+                        id="inputNuevoProyectoM2TerrenoDepartamentos"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 input-campo">
+                      <label
+                        for="inputNuevoProyectoM2TerrenoDepartamentos"
+                        class="form-label"
+                        >Condiciones de entrega</label
+                      >
+                      <input
+                        type="text"
+                        autocomplete="off"
+                        class="form-control"
+                        id="inputNuevoProyectoM2TerrenoDepartamentos"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-6">
+                    <div class="mb-3 radio-check-depas">
+                      <label
+                        for="inputNuevoProyectoWalkinClosetDepartamentos"
+                        class="form-label"
+                        >Walking closet</label
+                      >
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="flexRadioWalkinClosetDepartamentos"
+                          id="flexRadioWalkinClosetTrueDepartamentos"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="flexRadioWalkinClosetTrueDepartamentos"
+                        >
+                          Sí
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="flexRadioWalkinClosetDepartamentos"
+                          id="flexRadioWalkinClosetFalseDepartamentos"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="flexRadioWalkinClosetFalseDepartamentos"
+                        >
+                          No
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="mb-3 radio-check-depas">
+                      <label
+                        for="inputNuevoProyectoFlexDepartamentos"
+                        class="form-label"
+                        >Flex</label
+                      >
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="flexRadioFlexDepartamentos"
+                          id="flexRadioFlexTrueDepartamentos"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="flexRadioFlexTrueDepartamentos"
+                        >
+                          Sí
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="flexRadioFlexDepartamentos"
+                          id="flexRadioWalkinClosetFalseDepartamentos"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="flexRadioWalkinClosetFalseDepartamentos"
+                        >
+                          No
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="mb-3 radio-check-depas">
+                      <label
+                        for="inputNuevoProyectoLockOffDepartamentos"
+                        class="form-label"
+                        >Lock off</label
+                      >
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="flexRadioLockOffDepartamentos"
+                          id="flexRadioLockOffTrueDepartamentos"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="flexRadioLockOffTrueDepartamentos"
+                        >
+                          Sí
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="flexRadioLockOffDepartamentos"
+                          id="flexRadioLockOffFalseDepartamentos"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="flexRadioLockOffFalseDepartamentos"
+                        >
+                          No
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="mb-3 radio-check-depas">
+                      <label
+                        for="inputNuevoProyectoHabServicioDepartamentos"
+                        class="form-label"
+                        >Habitación de servicio</label
+                      >
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="flexRadioHabServicioDepartamentos"
+                          id="flexRadioHabServicioTrueDepartamentos"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="flexRadioHabServicioTrueDepartamentos"
+                        >
+                          Sí
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="flexRadioHabServicioDepartamentos"
+                          id="flexRadioHabServicioFalseDepartamentos"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="flexRadioHabServicioFalseDepartamentos"
+                        >
+                          No
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="mb-3 radio-check-depas">
+                  <label
+                    for="inputNuevoProyectoBodegaDepartamentos"
+                    class="form-label"
+                    >Bodega</label
+                  >
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="flexRadioBodegaDepartamentos"
+                      id="flexRadioBodegaTrueDepartamentos"
+                    />
+                    <label
+                      class="form-check-label"
+                      for="flexRadioBodegaTrueDepartamentos"
+                    >
+                      Sí
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="flexRadioBodegaDepartamentos"
+                      id="flexRadioBodegaFalseDepartamentos"
+                    />
+                    <label
+                      class="form-check-label"
+                      for="flexRadioBodegaFalseCasas"
+                    >
+                      No
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cerrar
+            </button>
+            <button type="button" class="btn btn-primary">
+              Guardar cambios
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      id="modalFormTerrenos"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Tipología - Terrenos
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-dialog modal-dialog-scrollable">
+            <div class="container">
+              <div class="form-caracteristicas-terrenos-container">
+                <div class="row">
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 input-campo">
+                      <label
+                        for="inputNuevoProyectoModeloTerrenos"
+                        class="form-label"
+                        >Modelo</label
+                      >
+                      <input
+                        type="text"
+                        autocomplete="off"
+                        class="form-control"
+                        id="inputNuevoProyectoModeloTerrenos"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 input-campo">
+                      <label
+                        for="inputNuevoProyectoPrecioTerrenos"
+                        class="form-label"
+                        >Precio</label
+                      >
+                      <input
+                        type="number"
+                        autocomplete="off"
+                        class="form-control"
+                        id="inputNuevoProyectoPrecioTerrenos"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 input-campo">
+                      <label
+                        for="inputNuevoProyectoM2TerrenoTerrenos"
+                        class="form-label"
+                        >M<sup>2</sup> de terreno</label
+                      >
+                      <input
+                        type="number"
+                        autocomplete="off"
+                        class="form-control"
+                        id="inputNuevoProyectoM2TerrenoTerrenos"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 input-campo">
+                      <label
+                        for="inputNuevoProyectoFrenteTerrenos"
+                        class="form-label"
+                        >Frente</label
+                      >
+                      <input
+                        type="number"
+                        autocomplete="off"
+                        class="form-control"
+                        id="inputNuevoProyectoFrenteTerrenos"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 input-campo">
+                      <label
+                        for="inputNuevoProyectoFondoTerrenos"
+                        class="form-label"
+                        >Fondo</label
+                      >
+                      <input
+                        type="number"
+                        autocomplete="off"
+                        class="form-control"
+                        id="inputNuevoProyectoFondoTerrenos"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 input-campo">
+                      <label
+                        for="inputNuevoProyectoPrecioPorM2Terrenos"
+                        class="form-label"
+                        >Precio / M<sup>2</sup></label
+                      >
+                      <input
+                        type="number"
+                        autocomplete="off"
+                        class="form-control"
+                        id="inputNuevoProyectoPrecioPorM2Terrenos"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 input-campo">
+                      <label
+                        for="inputNuevoProyectoCusTerrenos"
+                        class="form-label"
+                        >Cus</label
+                      >
+                      <input
+                        type="number"
+                        autocomplete="off"
+                        class="form-control"
+                        id="inputNuevoProyectoCusTerrenos"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 input-campo">
+                      <label
+                        for="inputNuevoProyectoCusM2Terrenos"
+                        class="form-label"
+                        >Cus total en m<sup>2</sup></label
+                      >
+                      <input
+                        type="number"
+                        autocomplete="off"
+                        class="form-control"
+                        id="inputNuevoProyectoCusM2Terrenos"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 input-campo">
+                      <label
+                        for="inputNuevoProyectoCosTerrenos"
+                        class="form-label"
+                        >Cos</label
+                      >
+                      <input
+                        type="number"
+                        autocomplete="off"
+                        class="form-control"
+                        id="inputNuevoProyectoCosTerrenos"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 input-campo">
+                      <label
+                        for="inputNuevoProyectoCosM2Terrenos"
+                        class="form-label"
+                        >Cos total en m<sup>2</sup></label
+                      >
+                      <input
+                        type="number"
+                        autocomplete="off"
+                        class="form-control"
+                        id="inputNuevoProyectoCosM2Terrenos"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="mb-3 input-campo">
+                  <label
+                    for="inputNuevoProyectoAlturaMaximaTerrenos"
+                    class="form-label"
+                    >Altura máxima (en pisos)</label
+                  >
+                  <input
+                    type="number"
+                    autocomplete="off"
+                    class="form-control"
+                    id="inputNuevoProyectoAlturaMaximaTerrenos"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cerrar
+            </button>
+            <button type="button" class="btn btn-primary">
+              Guardar cambios
+            </button>
           </div>
         </div>
       </div>

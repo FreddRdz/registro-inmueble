@@ -121,3 +121,16 @@
 .task-menu-departamentos li i {
   padding-right: 8px;
 }
+
+.button-table {
+  background: none;
+  border: none;
+}
+
+.pen-icon:hover {
+  color: #ffc107;
+}
+
+.trash-icon:hover {
+  color: #dc3545;
+}
