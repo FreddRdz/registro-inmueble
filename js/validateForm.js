@@ -7,6 +7,43 @@ const inputsDeveloperNewProject = document.querySelectorAll(
   '#inputNuevoProyectoNombre, #inputNuevoProyectoDesarrollador, #inputNuevoProyectoArquitectos, #inputNuevoProyectoPrecioInicial'
 );
 
+inputsDeveloperNewProject[3].addEventListener('keyup', (e) => {
+  if (inputsDeveloperNewProject[3].value < 0) {
+    alertWarning('No puedes dejar valores negativos en este campo');
+    inputsNewDeveloperForm[1].value = '';
+  }
+
+  if (e.keyCode >= 48 && e.keyCode <= 57) {
+    inputsDeveloperNewProject[3].value = numberWithCommas(
+      inputsDeveloperNewProject[3].value
+    );
+  } else if (e.keyCode === 8) {
+    inputsDeveloperNewProject[3].value = numberWithCommas(
+      inputsDeveloperNewProject[3].value
+    );
+  } else {
+    inputsDeveloperNewProject[3].value =
+      inputsDeveloperNewProject[3].value.substring(
+        0,
+        inputsDeveloperNewProject[3].value.length - 1
+      );
+  }
+});
+
+const numberWithCommas = (value) => {
+  let newString = '';
+
+  for (let i = 0; i < value.length; i++) {
+    if (value[i] !== ',') {
+      newString = newString + value[i];
+    }
+  }
+
+  const num = Number(newString);
+
+  return num.toLocaleString('en-US');
+};
+
 // Selects de los campos generales
 const selectsDeveloperNewProject = document.querySelectorAll(
   '.select-estado-registro, .select-estado-registro, .select-estado-registro'
@@ -244,7 +281,7 @@ const addEventListenerListNewDeveloper = () => {
 const addEventListenerListNewProjectGeneralInputs = () => {
   let array = [...inputsDeveloperNewProject];
   array.map((input) => {
-    input.addEventListener('change', () => {
+    input.addEventListener('keyup', () => {
       if (input.value.length >= 4) {
         conditionGeneralInputs = true;
       } else {
