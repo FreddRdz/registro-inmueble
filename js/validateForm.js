@@ -710,6 +710,10 @@ const numerWithOutAlphaNumerics = (value) => {
 const numberWithCommas = (value) => {
   let newString = '';
 
+  if (value === '') {
+    return '';
+  }
+
   for (let i = 0; i < value.length; i++) {
     if (value[i] !== ',') {
       newString = newString + value[i];
