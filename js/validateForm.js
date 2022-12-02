@@ -7,6 +7,33 @@ const inputsDeveloperNewProject = document.querySelectorAll(
   '#inputNuevoProyectoNombre, #inputNuevoProyectoDesarrollador, #inputNuevoProyectoArquitectos, #inputNuevoProyectoPrecioInicial'
 );
 
+// Field input modales casas
+const inputFieldValidate = document.querySelectorAll('.inputModalNumberCasas');
+
+// Funcion que comprueba si el valor de un input es negativo, si tiene una palabra
+const addEventListenerKeyUpModalCasas = () => {
+  let array = [...inputFieldValidate];
+
+  array.map((input) => {
+    input.addEventListener('keyup', (e) => {
+      if (input.value < 0) {
+        alertWarning('No puedes dejar valores negativos en este campo');
+        input.value = '';
+      }
+
+      if (e.keyCode >= 48 && e.keyCode <= 57) {
+        input.value = numberWithCommas(input.value);
+      } else if (e.keyCode === 8) {
+        input.value = numberWithCommas(input.value);
+      } else {
+        input.value = numerWithOutAlphaNumerics(input.value);
+      }
+    });
+  });
+};
+
+addEventListenerKeyUpModalCasas();
+
 inputsDeveloperNewProject[3].addEventListener('keyup', (e) => {
   if (inputsDeveloperNewProject[3].value < 0) {
     alertWarning('No puedes dejar valores negativos en este campo');
@@ -22,27 +49,11 @@ inputsDeveloperNewProject[3].addEventListener('keyup', (e) => {
       inputsDeveloperNewProject[3].value
     );
   } else {
-    inputsDeveloperNewProject[3].value =
-      inputsDeveloperNewProject[3].value.substring(
-        0,
-        inputsDeveloperNewProject[3].value.length - 1
-      );
+    inputsDeveloperNewProject[3].value = numerWithOutAlphaNumerics(
+      inputsDeveloperNewProject[3].value
+    );
   }
 });
-
-const numberWithCommas = (value) => {
-  let newString = '';
-
-  for (let i = 0; i < value.length; i++) {
-    if (value[i] !== ',') {
-      newString = newString + value[i];
-    }
-  }
-
-  const num = Number(newString);
-
-  return num.toLocaleString('en-US');
-};
 
 // Selects de los campos generales
 const selectsDeveloperNewProject = document.querySelectorAll(
@@ -630,4 +641,22 @@ const alertWarning = (text) => {
     title: 'Un momento...',
     text: text,
   });
+};
+
+const numerWithOutAlphaNumerics = (value) => {
+  return value.substring(0, value.length - 1);
+};
+
+const numberWithCommas = (value) => {
+  let newString = '';
+
+  for (let i = 0; i < value.length; i++) {
+    if (value[i] !== ',') {
+      newString = newString + value[i];
+    }
+  }
+
+  const num = Number(newString);
+
+  return num.toLocaleString('en-US');
 };
