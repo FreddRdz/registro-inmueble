@@ -56,6 +56,35 @@ const addEventListenerKeyUpModalDepas = () => {
 
 addEventListenerKeyUpModalDepas();
 
+// Field input modales terrenos
+const inputFieldValidateTerrenos = document.querySelectorAll(
+  '.inputModalNumberTerreno'
+);
+
+// Funcion que comprueba si el valor de un input es negativo, si tiene una palabra
+const addEventListenerKeyUpModalTerrenos = () => {
+  let array = [...inputFieldValidateTerrenos];
+
+  array.map((input) => {
+    input.addEventListener('keyup', (e) => {
+      if (input.value < 0) {
+        alertWarning('No puedes dejar valores negativos en este campo');
+        input.value = '';
+      }
+
+      if (e.keyCode >= 48 && e.keyCode <= 57) {
+        input.value = numberWithCommas(input.value);
+      } else if (e.keyCode === 8) {
+        input.value = numberWithCommas(input.value);
+      } else {
+        input.value = numerWithOutAlphaNumerics(input.value);
+      }
+    });
+  });
+};
+
+addEventListenerKeyUpModalTerrenos();
+
 const selectProjectKindOfProject = document.querySelector(
   '.select-proyecto-registro'
 );
