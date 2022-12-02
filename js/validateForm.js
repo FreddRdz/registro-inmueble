@@ -1,18 +1,11 @@
-const selectProjectKindOfProject = document.querySelector(
-  '.select-proyecto-registro'
-);
-
-// Inputs de los campos generales
-const inputsDeveloperNewProject = document.querySelectorAll(
-  '#inputNuevoProyectoNombre, #inputNuevoProyectoDesarrollador, #inputNuevoProyectoArquitectos, #inputNuevoProyectoPrecioInicial'
-);
-
 // Field input modales casas
-const inputFieldValidate = document.querySelectorAll('.inputModalNumberCasas');
+const inputFieldValidateCasas = document.querySelectorAll(
+  '.inputModalNumberCasas'
+);
 
 // Funcion que comprueba si el valor de un input es negativo, si tiene una palabra
 const addEventListenerKeyUpModalCasas = () => {
-  let array = [...inputFieldValidate];
+  let array = [...inputFieldValidateCasas];
 
   array.map((input) => {
     input.addEventListener('keyup', (e) => {
@@ -33,6 +26,44 @@ const addEventListenerKeyUpModalCasas = () => {
 };
 
 addEventListenerKeyUpModalCasas();
+
+// Field input modales depas
+const inputFieldValidateDepas = document.querySelectorAll(
+  '.inputModalNumberDepas'
+);
+
+// Funcion que comprueba si el valor de un input es negativo, si tiene una palabra
+const addEventListenerKeyUpModalDepas = () => {
+  let array = [...inputFieldValidateDepas];
+
+  array.map((input) => {
+    input.addEventListener('keyup', (e) => {
+      if (input.value < 0) {
+        alertWarning('No puedes dejar valores negativos en este campo');
+        input.value = '';
+      }
+
+      if (e.keyCode >= 48 && e.keyCode <= 57) {
+        input.value = numberWithCommas(input.value);
+      } else if (e.keyCode === 8) {
+        input.value = numberWithCommas(input.value);
+      } else {
+        input.value = numerWithOutAlphaNumerics(input.value);
+      }
+    });
+  });
+};
+
+addEventListenerKeyUpModalDepas();
+
+const selectProjectKindOfProject = document.querySelector(
+  '.select-proyecto-registro'
+);
+
+// Inputs de los campos generales
+const inputsDeveloperNewProject = document.querySelectorAll(
+  '#inputNuevoProyectoNombre, #inputNuevoProyectoDesarrollador, #inputNuevoProyectoArquitectos, #inputNuevoProyectoPrecioInicial'
+);
 
 inputsDeveloperNewProject[3].addEventListener('keyup', (e) => {
   if (inputsDeveloperNewProject[3].value < 0) {
