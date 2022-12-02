@@ -119,11 +119,19 @@ const btnRegisterNewDeveloper = document.querySelector(
 const btnRegisterNewProject = document.querySelector('.btn-registrar-proyecto');
 
 // Evento del botón de registrar nuevo desarrollador
-btnRegisterNewDeveloper.addEventListener('click', () => {
-  Number(inputsNewDeveloperForm[1].value);
+btnRegisterNewDeveloper.addEventListener('keyup', () => {
+  // Acccion para registrar un nuevo desarrollador
+});
+
+// Evento donde si el valor es negativo o si es mayor de 100, lanzará una alerta
+inputsNewDeveloperForm[1].addEventListener('keyup', () => {
+  if (inputsNewDeveloperForm[1].value < 0) {
+    alertWarning('No puedes dejar valores negativos en este campo');
+    inputsNewDeveloperForm[1].value = '';
+  }
 
   if (inputsNewDeveloperForm[1].value > 100) {
-    alertError(
+    alertWarning(
       `¿Estás seguro que tu desarrollador tiene más de ${inputsNewDeveloperForm[1].value} años?`
     );
     inputsNewDeveloperForm[1].value = '';
@@ -575,6 +583,14 @@ const alertError = (text) => {
   Swal.fire({
     icon: 'error',
     title: 'Oops...',
+    text: text,
+  });
+};
+
+const alertWarning = (text) => {
+  Swal.fire({
+    icon: 'warning',
+    title: 'Un momento...',
     text: text,
   });
 };
