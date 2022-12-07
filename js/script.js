@@ -85,9 +85,7 @@ const checkRadioTerrazaM2CasasFalse = document.querySelector(
 );
 
 // Input del campo de los metros cuadrados de las terrazas en sección casas
-const inputTerrazaM2Casas = document.querySelector(
-  '#inputNuevoProyectoM2DeTerrazasCasas'
-);
+const inputTerrazaM2Casas = document.querySelector('.fieldM2DeTerrazasCasas');
 
 const checkRadioTerrazaM2CasasNA = document.querySelector(
   '#flexRadioTerrazasNACasas'

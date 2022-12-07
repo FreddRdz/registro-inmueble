@@ -130,59 +130,14 @@ const checkBoxesAmenidadesCasas = document.querySelectorAll(
   '.form-amenidades-container-casas > .form-check > input'
 );
 
-// Text fields de las casas (caracteristicas)
-const inputsFieldsCaracteristicasCasas = document.querySelectorAll(
-  '.form-caracteristicas-casas-container > .row > .col-12 > .input-campo > input'
-);
-
-// Radio checks de las casas
-const radioChecksCaracteristicasCasas = document.querySelectorAll(
-  '.form-caracteristicas-casas-container > .row > .radio-check > .form-check > input'
-);
-
-// radio check sobre los metros cuadrados de la terraza (casas)
-const radioCheckTerrazasCasas = document.querySelectorAll(
-  '.radio-check-terrazas-casas > .form-check > input'
-);
-
-// Input field de los metros cuadrados de la terraza (casas)
-const inputFieldM2TerrazasCasas = document.querySelector(
-  '#inputNuevoProyectoM2DeTerrazasCasas'
-);
-
 // Checkboxes de los departamentos (amenidades)
 const checkBoxesAmenidadesDepartamentos = document.querySelectorAll(
   '.form-amenidades-container-departamentos > .form-check > input'
 );
 
-// Text fields de las casas (caracteristicas)
-const inputsFieldsCaracteristicasDepartamentos = document.querySelectorAll(
-  '.form-caracteristicas-departamentos-container > .row > .col-12 > .input-campo > input'
-);
-
-// Radio checks de los departamentos
-const radioChecksCaracteristicasDepartamentos = document.querySelectorAll(
-  '.radio-check-depas > .form-check > input'
-);
-
-// radio check sobre los metros cuadrados de la terraza (departamentos)
-const radioCheckTerrazasDepartamentos = document.querySelectorAll(
-  '.radio-check-terrazas-depas > .form-check > input'
-);
-
-// Input field de los metros cuadrados de la terraza (departamentos)
-const inputFieldM2TerrazasDepartamentos = document.querySelector(
-  '#inputNuevoProyectoM2DeTerrazasDepartamentos'
-);
-
 // Checkboxes de los terrenos (amenidades)
 const checkBoxesAmenidadesTerrenos = document.querySelectorAll(
   '.form-amenidades-container-terrenos > .form-check > input'
-);
-
-// Text fields de los terrenos (caracteristicas)
-const inputsFieldsCaracteristicasTerrenos = document.querySelectorAll(
-  '.form-caracteristicas-terrenos-container > .row > .col-12 > .input-campo > input'
 );
 
 // Condiciones generales
@@ -191,27 +146,10 @@ let conditionGeneralSelects = false;
 let conditionFechasEntrega = false;
 // Condiciones casas
 let conditionCheckBoxesAmenidadesCasas = false;
-let conditionInputFieldsCaracteristicasCasas = false;
-let conditionRadioCheckWalkingClosetCasas = false;
-let conditionRadioCheckFlexCasas = false;
-let conditionRadioLockOffCasas = false;
-let conditionRadioHabServicioCasas = false;
-let conditionRadioBodegaCasas = false;
-let conditionRadioTerrazaCasas = false;
-let conditionRadioTerrazaCasasToValidate = false;
 // Condiciones departamentos
 let conditionCheckBoxesAmenidadesDepartamentos = false;
-let conditionInputFieldsCaracteristicasDepartamentos = false;
-let conditionRadioCheckWalkingClosetDepartamentos = false;
-let conditionRadioCheckFlexDepartamentos = false;
-let conditionRadioLockOffDepartamentos = false;
-let conditionRadioHabServicioDepartamentos = false;
-let conditionRadioBodegaDepartamentos = false;
-let conditionRadioTerrazaDepartamentos = false;
-let conditionRadioTerrazaDepartamentosToValidate = false;
 // Condiciones terrenos
 let conditionCheckBoxesAmenidadesTerrenos = false;
-let conditionInputFieldsCaracteristicasTerrenos = false;
 
 // Inputs para llenar la información del nuevo desarrollador
 const inputsNewDeveloperForm = document.querySelectorAll(
@@ -259,14 +197,7 @@ const checkConditionalsCasas = () => {
     conditionGeneralInputs &&
     conditionGeneralSelects &&
     conditionFechasEntrega &&
-    conditionCheckBoxesAmenidadesCasas &&
-    conditionInputFieldsCaracteristicasCasas &&
-    conditionRadioCheckWalkingClosetCasas &&
-    conditionRadioCheckFlexCasas &&
-    conditionRadioLockOffCasas &&
-    conditionRadioHabServicioCasas &&
-    conditionRadioBodegaCasas &&
-    conditionRadioTerrazaCasas
+    conditionCheckBoxesAmenidadesCasas
   ) {
     if (radioCheckTerrazasCasas[0].checked) {
       if (inputFieldM2TerrazasCasas.value > 0) {
@@ -287,24 +218,9 @@ const checkConditionalsDepartamentos = () => {
     conditionGeneralInputs &&
     conditionGeneralSelects &&
     conditionFechasEntrega &&
-    conditionCheckBoxesAmenidadesDepartamentos &&
-    conditionInputFieldsCaracteristicasDepartamentos &&
-    conditionRadioCheckWalkingClosetDepartamentos &&
-    conditionRadioCheckFlexDepartamentos &&
-    conditionRadioLockOffDepartamentos &&
-    conditionRadioHabServicioDepartamentos &&
-    conditionRadioBodegaDepartamentos &&
-    conditionRadioTerrazaDepartamentos
+    conditionCheckBoxesAmenidadesDepartamentos
   ) {
-    if (radioCheckTerrazasDepartamentos[0].checked) {
-      if (inputFieldM2TerrazasDepartamentos.value > 0) {
-        swalAlertSuccessAddProject();
-      } else {
-        swalAlertMissingFields();
-      }
-    } else {
-      swalAlertSuccessAddProject();
-    }
+    swalAlertSuccessAddProject();
   } else {
     swalAlertMissingFields();
   }
@@ -315,8 +231,7 @@ const checkConditionalsTerrenos = () => {
     conditionGeneralInputs &&
     conditionGeneralSelects &&
     conditionFechasEntrega &&
-    conditionCheckBoxesAmenidadesTerrenos &&
-    conditionInputFieldsCaracteristicasTerrenos
+    conditionCheckBoxesAmenidadesTerrenos
   ) {
     swalAlertSuccessAddProject();
   } else {
@@ -410,111 +325,6 @@ const addEventListenerListCheckBoxesAmenidadesCasas = () => {
 // Amenidades casas
 addEventListenerListCheckBoxesAmenidadesCasas();
 
-const addEventListenerListInputsFieldsCaracteCasas = () => {
-  let array = [...inputsFieldsCaracteristicasCasas];
-  array.map((input) => {
-    input.addEventListener('change', () => {
-      if (input.value.length >= 1) {
-        conditionInputFieldsCaracteristicasCasas = true;
-      } else {
-        conditionInputFieldsCaracteristicasCasas = false;
-      }
-    });
-  });
-};
-
-// Radio check Walking closet casas
-const addEventListenerListRadioCheckWalkingClosetCasas = () => {
-  let array = [
-    radioChecksCaracteristicasCasas[0],
-    radioChecksCaracteristicasCasas[1],
-  ];
-  array.map((input) => {
-    input.addEventListener('change', () => {
-      input.checked
-        ? (conditionRadioCheckWalkingClosetCasas = true)
-        : (conditionRadioCheckWalkingClosetCasas = false);
-    });
-  });
-};
-
-// Radio check Flex casas
-const addEventListenerListRadioCheckFlexCasas = () => {
-  let array = [
-    radioChecksCaracteristicasCasas[2],
-    radioChecksCaracteristicasCasas[3],
-  ];
-  array.map((input) => {
-    input.addEventListener('change', () => {
-      input.checked
-        ? (conditionRadioCheckFlexCasas = true)
-        : (conditionRadioCheckFlexCasas = false);
-    });
-  });
-};
-
-const addEventListenerListRadioCheckLockOffCasas = () => {
-  let array = [
-    radioChecksCaracteristicasCasas[4],
-    radioChecksCaracteristicasCasas[5],
-  ];
-  array.map((input) => {
-    input.addEventListener('change', () => {
-      input.checked
-        ? (conditionRadioLockOffCasas = true)
-        : (conditionRadioLockOffCasas = false);
-    });
-  });
-};
-
-const addEventListenerListRadioCheckHabServicioCasas = () => {
-  let array = [
-    radioChecksCaracteristicasCasas[6],
-    radioChecksCaracteristicasCasas[7],
-  ];
-  array.map((input) => {
-    input.addEventListener('change', () => {
-      input.checked
-        ? (conditionRadioHabServicioCasas = true)
-        : (conditionRadioHabServicioCasas = false);
-    });
-  });
-};
-
-const addEventListenerListRadioCheckBodegaCasas = () => {
-  let array = [
-    radioChecksCaracteristicasCasas[8],
-    radioChecksCaracteristicasCasas[9],
-  ];
-  array.map((input) => {
-    input.addEventListener('change', () => {
-      input.checked
-        ? (conditionRadioBodegaCasas = true)
-        : (conditionRadioBodegaCasas = false);
-    });
-  });
-};
-
-const addEventListenerListRadioCheckTerrazasCasas = () => {
-  let array = [radioCheckTerrazasCasas[0], radioCheckTerrazasCasas[1]];
-  array.map((input) => {
-    input.addEventListener('change', () => {
-      input.checked
-        ? (conditionRadioTerrazaCasas = true)
-        : (conditionRadioTerrazaCasas = false);
-    });
-  });
-};
-
-// Caracteristicas de la casa
-addEventListenerListInputsFieldsCaracteCasas();
-addEventListenerListRadioCheckWalkingClosetCasas();
-addEventListenerListRadioCheckFlexCasas();
-addEventListenerListRadioCheckLockOffCasas();
-addEventListenerListRadioCheckHabServicioCasas();
-addEventListenerListRadioCheckBodegaCasas();
-addEventListenerListRadioCheckTerrazasCasas();
-
 const addEventListenerListCheckBoxesAmenidadesDepartamentos = () => {
   let array = [...checkBoxesAmenidadesDepartamentos];
   array.map((input) => {
@@ -531,114 +341,6 @@ const addEventListenerListCheckBoxesAmenidadesDepartamentos = () => {
 // Amenidades de la casa
 addEventListenerListCheckBoxesAmenidadesDepartamentos();
 
-const addEventListenerListInputsFieldsCaracteDepartamentos = () => {
-  let array = [...inputsFieldsCaracteristicasDepartamentos];
-  array.map((input) => {
-    input.addEventListener('change', () => {
-      if (input.value.length >= 1) {
-        conditionInputFieldsCaracteristicasDepartamentos = true;
-      } else {
-        conditionInputFieldsCaracteristicasDepartamentos = false;
-      }
-    });
-  });
-};
-
-// Radio check Walking closet casas
-const addEventListenerListRadioCheckWalkingClosetDepartamentos = () => {
-  let array = [
-    radioChecksCaracteristicasDepartamentos[0],
-    radioChecksCaracteristicasDepartamentos[1],
-  ];
-  array.map((input) => {
-    input.addEventListener('change', () => {
-      input.checked
-        ? (conditionRadioCheckWalkingClosetDepartamentos = true)
-        : (conditionRadioCheckWalkingClosetDepartamentos = false);
-    });
-  });
-};
-
-// Radio check Flex casas
-const addEventListenerListRadioCheckFlexDepartamentos = () => {
-  let array = [
-    radioChecksCaracteristicasDepartamentos[2],
-    radioChecksCaracteristicasDepartamentos[3],
-  ];
-  array.map((input) => {
-    input.addEventListener('change', () => {
-      input.checked
-        ? (conditionRadioCheckFlexDepartamentos = true)
-        : (conditionRadioCheckFlexDepartamentos = false);
-    });
-  });
-};
-
-const addEventListenerListRadioCheckLockOffDepartamentos = () => {
-  let array = [
-    radioChecksCaracteristicasDepartamentos[4],
-    radioChecksCaracteristicasDepartamentos[5],
-  ];
-  array.map((input) => {
-    input.addEventListener('change', () => {
-      input.checked
-        ? (conditionRadioLockOffDepartamentos = true)
-        : (conditionRadioLockOffDepartamentos = false);
-    });
-  });
-};
-
-const addEventListenerListRadioCheckHabServicioDepartamentos = () => {
-  let array = [
-    radioChecksCaracteristicasDepartamentos[6],
-    radioChecksCaracteristicasDepartamentos[7],
-  ];
-  array.map((input) => {
-    input.addEventListener('change', () => {
-      input.checked
-        ? (conditionRadioHabServicioDepartamentos = true)
-        : (conditionRadioHabServicioDepartamentos = false);
-    });
-  });
-};
-
-const addEventListenerListRadioCheckBodegaDepartamentos = () => {
-  let array = [
-    radioChecksCaracteristicasDepartamentos[8],
-    radioChecksCaracteristicasDepartamentos[9],
-  ];
-  array.map((input) => {
-    input.addEventListener('change', () => {
-      input.checked
-        ? (conditionRadioBodegaDepartamentos = true)
-        : (conditionRadioBodegaDepartamentos = false);
-    });
-  });
-};
-
-const addEventListenerListRadioCheckTerrazasDepartamentos = () => {
-  let array = [
-    radioCheckTerrazasDepartamentos[0],
-    radioCheckTerrazasDepartamentos[1],
-  ];
-  array.map((input) => {
-    input.addEventListener('change', () => {
-      input.checked
-        ? (conditionRadioTerrazaDepartamentos = true)
-        : (conditionRadioTerrazaDepartamentos = false);
-    });
-  });
-};
-
-// Input fields de caracteristicas (departamentos)
-addEventListenerListInputsFieldsCaracteDepartamentos();
-addEventListenerListRadioCheckWalkingClosetDepartamentos();
-addEventListenerListRadioCheckFlexDepartamentos();
-addEventListenerListRadioCheckLockOffDepartamentos();
-addEventListenerListRadioCheckHabServicioDepartamentos();
-addEventListenerListRadioCheckBodegaDepartamentos();
-addEventListenerListRadioCheckTerrazasDepartamentos();
-
 const addEventListenerListCheckBoxesAmenidadesTerrenos = () => {
   let array = [...checkBoxesAmenidadesTerrenos];
   array.map((input) => {
@@ -654,21 +356,6 @@ const addEventListenerListCheckBoxesAmenidadesTerrenos = () => {
 
 // Amenidades de la casa
 addEventListenerListCheckBoxesAmenidadesTerrenos();
-
-const addEventListenerListInputsFieldsCaracteTerrenos = () => {
-  let array = [...inputsFieldsCaracteristicasTerrenos];
-  array.map((input) => {
-    input.addEventListener('change', () => {
-      if (input.value.length >= 1) {
-        conditionInputFieldsCaracteristicasTerrenos = true;
-      } else {
-        conditionInputFieldsCaracteristicasTerrenos = false;
-      }
-    });
-  });
-};
-
-addEventListenerListInputsFieldsCaracteTerrenos();
 
 const swalAlertSuccessAddProject = () => {
   Swal.fire({

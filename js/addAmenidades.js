@@ -124,3 +124,65 @@ taskInputDepartamentos.addEventListener('keyup', (e) => {
     showTodoDepartamentos();
   }
 });
+
+const taskInputTerrenos = document.querySelector('.task-input-terrenos input');
+const taskBoxTerrenos = document.querySelector('.task-box-terrenos');
+
+let editIdTerrenos;
+let isEditedTaskTerrenos = false;
+
+let todosTerrenos = [];
+
+const showTodoTerrenos = () => {
+  let li = '';
+  if (todosTerrenos) {
+    todosTerrenos.forEach((todo, id) => {
+      li += `
+            <li class="task-terrenos border-bottom">
+              <p class="task-text">${todo.name}</p>
+              <div class="settings-terrenos">
+                <i class="fa-solid fa-ellipsis"></i>
+                <ul class="task-menu-terrenos shadow">
+                  <li onClick="editTaskTerrenos(${id}, '${todo.name}')"><i class="fa-solid fa-pen"></i>Editar</li>
+                  <li onClick="deleteTaskTerrenos(${id})"><i class="fa-solid fa-trash"></i>Borrar</li>
+                </ul>
+              </div>
+            </li>`;
+    });
+  }
+
+  taskBoxTerrenos.innerHTML = li;
+};
+
+showTodoTerrenos();
+
+const deleteTaskTerrenos = (id) => {
+  todosTerrenos.splice(id, 1);
+  // localStorage.setItem('todo-list', JSON.stringify(todosCasas));
+  showTodoTerrenos();
+};
+
+const editTaskTerrenos = (id, name) => {
+  editIdTerrenos = id;
+  isEditedTaskTerrenos = true;
+  taskInputTerrenos.value = name;
+};
+
+taskInputTerrenos.addEventListener('keyup', (e) => {
+  let userTask = taskInputTerrenos.value.trim();
+  if (e.key === 'Enter' && userTask) {
+    if (!isEditedTaskTerrenos) {
+      if (!todosTerrenos) {
+        todosTerrenos = [];
+      }
+      let taskInfo = { name: userTask, status: 'pending' };
+      todosTerrenos.push(taskInfo);
+    } else {
+      isEditedTaskTerrenos = false;
+      todosTerrenos[editIdTerrenos].name = userTask;
+    }
+    taskInputTerrenos.value = '';
+    // localStorage.setItem('todo-list', JSON.stringify(todosCasas));
+    showTodoTerrenos();
+  }
+});

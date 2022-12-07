@@ -196,18 +196,35 @@
                 </div>
               </div>
               <div class="col-12 col-md-6">
-                <div class="mb-3">
-                  <label
-                    for="inputNuevoProyectoPrecioInicial"
-                    class="form-label"
-                    >Precio inicial</label
-                  >
-                  <input
-                    type="text"
-                    autocomplete="off"
-                    class="form-control"
-                    id="inputNuevoProyectoPrecioInicial"
-                  />
+                <div class="mb-3 d-flex gap-2 justify-content-between">
+                  <div class="col-9">
+                    <label
+                      for="inputNuevoProyectoPrecioInicial"
+                      class="form-label"
+                      >Precio inicial</label
+                    >
+                    <input
+                      type="text"
+                      autocomplete="off"
+                      class="form-control"
+                      id="inputNuevoProyectoPrecioInicial"
+                    />
+                  </div>
+                  <div class="col-3">
+                    <label
+                      for="inputNuevoProyectoPrecioInicial"
+                      class="form-label"
+                      >Moneda</label
+                    >
+                    <select
+                      class="form-select"
+                      aria-label="Default select example"
+                    >
+                      <option selected>Selecciona...</option>
+                      <option value="MXN">MXN</option>
+                      <option value="USD">USD</option>
+                    </select>
+                  </div>
                 </div>
               </div>
             </div>
@@ -554,6 +571,22 @@
                         >
                           Juegos infantiles
                         </label>
+                      </div>
+                      <label
+                        for="inputNuevoProyectoOtrasAmenidadesTerrenos"
+                        class="form-label mt-2"
+                        ><b>Otras</b>
+                      </label>
+                      <div class="wrapper-terrenos">
+                        <div class="task-input-terrenos">
+                          <input
+                            type="text"
+                            autocomplete="off"
+                            class="form-control"
+                            id="inputNuevoProyectoOtrasAmenidadesTerrenos"
+                          />
+                        </div>
+                        <ul class="task-box-terrenos mt-2 p-0"></ul>
                       </div>
                     </div>
                   </div>
@@ -973,151 +1006,147 @@
                   aria-labelledby="flush-headingThree"
                   data-bs-parent="#accordionFlushExample"
                 >
-                  <div class="accordion-body">
-                    <table class="table table-casas">
-                      <thead>
-                        <tr>
-                          <th scope="col" class="text-center">#</th>
-                          <th scope="col" class="text-center">Estatus</th>
-                          <th scope="col" class="text-center">Editar</th>
-                          <th scope="col" class="text-center">Eliminar</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <th scope="row" class="text-center">1</th>
-                          <td class="text-center">
-                            <i class="fa-solid fa-xmark fa-lg"></i>
-                          </td>
-                          <td class="text-center">
-                            <button class="button-table">
-                              <i class="fa-solid fa-pen fa-lg pen-icon"></i>
-                            </button>
-                          </td>
-                          <td class="text-center">
-                            <button class="button-table">
-                              <i class="fa-solid fa-trash fa-lg trash-icon"></i>
-                            </button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <th scope="row" class="text-center">2</th>
-                          <td class="text-center">
-                            <i class="fa-solid fa-check fa-lg"></i>
-                          </td>
-                          <td class="text-center">
-                            <button
-                              class="button-table"
-                              data-bs-toggle="modal"
-                              data-bs-target="#modalFormCasas"
-                            >
-                              <i class="fa-solid fa-pen fa-lg pen-icon"></i>
-                            </button>
-                          </td>
-                          <td class="text-center">
-                            <button class="button-table">
-                              <i class="fa-solid fa-trash fa-lg trash-icon"></i>
-                            </button>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                    <table class="table table-departamentos">
-                      <thead>
-                        <tr>
-                          <th scope="col" class="text-center">#</th>
-                          <th scope="col" class="text-center">Estatus</th>
-                          <th scope="col" class="text-center">Editar</th>
-                          <th scope="col" class="text-center">Eliminar</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <th scope="row" class="text-center">1</th>
-                          <td class="text-center">
-                            <i class="fa-solid fa-xmark fa-lg"></i>
-                          </td>
-                          <td class="text-center">
-                            <button class="button-table">
-                              <i class="fa-solid fa-pen fa-lg pen-icon"></i>
-                            </button>
-                          </td>
-                          <td class="text-center">
-                            <button class="button-table">
-                              <i class="fa-solid fa-trash fa-lg trash-icon"></i>
-                            </button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <th scope="row" class="text-center">2</th>
-                          <td class="text-center">
-                            <i class="fa-solid fa-check fa-lg"></i>
-                          </td>
-                          <td class="text-center">
-                            <button
-                              class="button-table"
-                              data-bs-toggle="modal"
-                              data-bs-target="#modalFormDepartamentos"
-                            >
-                              <i class="fa-solid fa-pen fa-lg pen-icon"></i>
-                            </button>
-                          </td>
-                          <td class="text-center">
-                            <button class="button-table">
-                              <i class="fa-solid fa-trash fa-lg trash-icon"></i>
-                            </button>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                    <table class="table table-terrenos">
-                      <thead>
-                        <tr>
-                          <th scope="col" class="text-center">#</th>
-                          <th scope="col" class="text-center">Estatus</th>
-                          <th scope="col" class="text-center">Editar</th>
-                          <th scope="col" class="text-center">Eliminar</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <th scope="row" class="text-center">1</th>
-                          <td class="text-center">
-                            <i class="fa-solid fa-xmark fa-lg"></i>
-                          </td>
-                          <td class="text-center">
-                            <button class="button-table">
-                              <i class="fa-solid fa-pen fa-lg pen-icon"></i>
-                            </button>
-                          </td>
-                          <td class="text-center">
-                            <button class="button-table">
-                              <i class="fa-solid fa-trash fa-lg trash-icon"></i>
-                            </button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <th scope="row" class="text-center">2</th>
-                          <td class="text-center">
-                            <i class="fa-solid fa-check fa-lg"></i>
-                          </td>
-                          <td class="text-center">
-                            <button
-                              class="button-table"
-                              data-bs-toggle="modal"
-                              data-bs-target="#modalFormTerrenos"
-                            >
-                              <i class="fa-solid fa-pen fa-lg pen-icon"></i>
-                            </button>
-                          </td>
-                          <td class="text-center">
-                            <button class="button-table">
-                              <i class="fa-solid fa-trash fa-lg trash-icon"></i>
-                            </button>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
+                  <div class="accordion-body pt-2 px-1">
+                    <div class="table-casas">
+                      <div class="d-flex justify-content-end">
+                        <button
+                          class="btn btn-success"
+                          data-bs-toggle="modal"
+                          data-bs-target="#modalFormCasas"
+                        >
+                          Agregar tipología
+                        </button>
+                      </div>
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col" class="text-center">#</th>
+                            <th scope="col" class="text-center">Nombre</th>
+                            <th scope="col" class="text-center">Editar</th>
+                            <th scope="col" class="text-center">Eliminar</th>
+                          </tr>
+                        </thead>
+                        <tbody class="t-body-casas">
+                          <tr>
+                            <th scope="row" class="text-center">1</th>
+                            <td class="text-center">
+                              <i class="fa-solid fa-xmark fa-lg"></i>
+                            </td>
+                            <td class="text-center">
+                              <button class="button-table">
+                                <i class="fa-solid fa-pen fa-lg pen-icon"></i>
+                              </button>
+                            </td>
+                            <td class="text-center">
+                              <button class="button-table">
+                                <i
+                                  class="fa-solid fa-trash fa-lg trash-icon"
+                                ></i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row" class="text-center">2</th>
+                            <td class="text-center">
+                              <i class="fa-solid fa-check fa-lg"></i>
+                            </td>
+                            <td class="text-center">
+                              <button class="button-table">
+                                <i class="fa-solid fa-pen fa-lg pen-icon"></i>
+                              </button>
+                            </td>
+                            <td class="text-center">
+                              <button class="button-table">
+                                <i
+                                  class="fa-solid fa-trash fa-lg trash-icon"
+                                ></i>
+                              </button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="table-departamentos">
+                      <div class="d-flex justify-content-end">
+                        <button
+                          class="btn btn-success"
+                          data-bs-toggle="modal"
+                          data-bs-target="#modalFormDepartamentos"
+                        >
+                          Agregar tipología
+                        </button>
+                      </div>
+                      <table class="table table-departamentos">
+                        <thead>
+                          <tr>
+                            <th scope="col" class="text-center">#</th>
+                            <th scope="col" class="text-center">Nombre</th>
+                            <th scope="col" class="text-center">Editar</th>
+                            <th scope="col" class="text-center">Eliminar</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row" class="text-center">1</th>
+                            <td class="text-center">
+                              <i class="fa-solid fa-xmark fa-lg"></i>
+                            </td>
+                            <td class="text-center">
+                              <button class="button-table">
+                                <i class="fa-solid fa-pen fa-lg pen-icon"></i>
+                              </button>
+                            </td>
+                            <td class="text-center">
+                              <button class="button-table">
+                                <i
+                                  class="fa-solid fa-trash fa-lg trash-icon"
+                                ></i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row" class="text-center">2</th>
+                            <td class="text-center">
+                              <i class="fa-solid fa-check fa-lg"></i>
+                            </td>
+                            <td class="text-center">
+                              <button class="button-table">
+                                <i class="fa-solid fa-pen fa-lg pen-icon"></i>
+                              </button>
+                            </td>
+                            <td class="text-center">
+                              <button class="button-table">
+                                <i
+                                  class="fa-solid fa-trash fa-lg trash-icon"
+                                ></i>
+                              </button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="table-terrenos">
+                      <div class="d-flex justify-content-end">
+                        <button
+                          class="btn btn-success"
+                          data-bs-toggle="modal"
+                          data-bs-target="#modalFormTerrenos"
+                        >
+                          Agregar tipología
+                        </button>
+                      </div>
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col" class="text-center">#</th>
+                            <th scope="col" class="text-center">Nombre</th>
+                            <th scope="col" class="text-center">Editar</th>
+                            <th scope="col" class="text-center">Eliminar</th>
+                          </tr>
+                        </thead>
+                        <tbody class="t-body-terrenos"></tbody>
+                      </table>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1165,7 +1194,7 @@
                       <input
                         type="text"
                         autocomplete="off"
-                        class="form-control"
+                        class="form-control field-modal-casas"
                         id="inputNuevoProyectoModeloCasas"
                       />
                     </div>
@@ -1180,7 +1209,7 @@
                       <input
                         type="text"
                         autocomplete="off"
-                        class="form-control inputModalNumberCasas"
+                        class="form-control inputModalNumberCasas field-modal-casas"
                         id="inputNuevoProyectoPrecioCasas"
                       />
                     </div>
@@ -1195,7 +1224,7 @@
                       <input
                         type="text"
                         autocomplete="off"
-                        class="form-control inputModalNumberCasas"
+                        class="form-control inputModalNumberCasas field-modal-casas"
                         id="inputNuevoProyectoM2ConstruccionCasas"
                       />
                     </div>
@@ -1210,7 +1239,7 @@
                       <input
                         type="text"
                         autocomplete="off"
-                        class="form-control inputModalNumberCasas"
+                        class="form-control inputModalNumberCasas field-modal-casas"
                         id="inputNuevoProyectoM2TerrenoCasas"
                       />
                     </div>
@@ -1225,7 +1254,7 @@
                       <input
                         type="text"
                         autocomplete="off"
-                        class="form-control inputModalNumberCasas"
+                        class="form-control inputModalNumberCasas field-modal-casas"
                         id="inputNuevoProyectoNivelesCasas"
                       />
                     </div>
@@ -1240,7 +1269,7 @@
                       <input
                         type="text"
                         autocomplete="off"
-                        class="form-control inputModalNumberCasas"
+                        class="form-control inputModalNumberCasas field-modal-casas"
                         id="inputNuevoProyectoRecamarasCasas"
                       />
                     </div>
@@ -1255,7 +1284,7 @@
                       <input
                         type="text"
                         autocomplete="off"
-                        class="form-control inputModalNumberCasas"
+                        class="form-control inputModalNumberCasas field-modal-casas"
                         id="inputNuevoProyectoBaniosCasas"
                       />
                     </div>
@@ -1270,19 +1299,19 @@
                       <input
                         type="text"
                         autocomplete="off"
-                        class="form-control inputModalNumberCasas"
+                        class="form-control inputModalNumberCasas field-modal-casas"
                         id="inputNuevoProyectoMedioBaniosCasas"
                       />
                     </div>
                   </div>
                   <div class="col-12 col-md-6">
                     <div class="mb-3 radio-check-terrazas-casas">
-                      <label for="flexRadioTerrazaCasas" class="form-label"
+                      <label for="flexRadioTerrazasTrueCasas" class="form-label"
                         >Terraza</label
                       >
                       <div class="form-check">
                         <input
-                          class="form-check-input"
+                          class="form-check-input radio-input-modal-casas dd"
                           type="radio"
                           name="flexRadioWalkinTerrazaCasas"
                           id="flexRadioTerrazasTrueCasas"
@@ -1296,7 +1325,440 @@
                       </div>
                       <div class="form-check">
                         <input
-                          class="form-check-input"
+                          class="form-check-input radio-input-modal-casas"
+                          type="radio"
+                          name="flexRadioWalkinTerrazaCasas"
+                          id="flexRadioTerrazasFalseCasas"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="flexRadioTerrazasFalseCasas"
+                        >
+                          No
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3">
+                      <label
+                        for="inputNuevoProyectoM2DeTerrazasCasas"
+                        class="form-label"
+                        >M<sup>2</sup> de terrazas</label
+                      >
+                      <input
+                        type="text"
+                        autocomplete="off"
+                        class="form-control inputModalNumberCasas field-modal-casas fieldM2DeTerrazasCasas"
+                        id="fieldM2DeTerrazasCasas"
+                        disabled
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 input-campo">
+                      <label
+                        for="inputNuevoProyectoCondicionesEntrega"
+                        class="form-label"
+                        >Condiciones de entrega</label
+                      >
+                      <input
+                        type="text"
+                        autocomplete="off"
+                        class="form-control field-modal-casas"
+                        id="inputNuevoProyectoCondicionesEntrega"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 input-campo">
+                      <label
+                        for="inputNuevoProyectoCajonesEstacionamiento"
+                        class="form-label"
+                        >Cajones de estacionamiento</label
+                      >
+                      <input
+                        type="text"
+                        autocomplete="off"
+                        class="form-control inputModalNumberCasas field-modal-casas"
+                        id="inputNuevoProyectoCajonesEstacionamiento"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 radio-check">
+                      <label
+                        for="inputNuevoProyectoWalkinClosetCasas"
+                        class="form-label"
+                        >Walking closet</label
+                      >
+                      <div class="form-check">
+                        <input
+                          class="form-check-input radio-input-modal-casas"
+                          type="radio"
+                          name="flexRadioWalkinClosetCasas"
+                          id="flexRadioWalkinClosetTrueCasas"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="flexRadioWalkinClosetTrueCasas"
+                        >
+                          Sí
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input
+                          class="form-check-input radio-input-modal-casas"
+                          type="radio"
+                          name="flexRadioWalkinClosetCasas"
+                          id="flexRadioWalkinClosetFalseCasas"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="flexRadioWalkinClosetFalseCasas"
+                        >
+                          No
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 radio-check">
+                      <label
+                        for="inputNuevoProyectoFlexCasas"
+                        class="form-label"
+                        >Flex</label
+                      >
+                      <div class="form-check">
+                        <input
+                          class="form-check-input radio-input-modal-casas"
+                          type="radio"
+                          name="flexRadioFlexCasas"
+                          id="flexRadioFlexTrueCasas"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="flexRadioFlexTrueCasas"
+                        >
+                          Sí
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input
+                          class="form-check-input radio-input-modal-casas"
+                          type="radio"
+                          name="flexRadioFlexCasas"
+                          id="flexRadioFlexFalseCasas"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="flexRadioFlexFalseCasas"
+                        >
+                          No
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 radio-check">
+                      <label
+                        for="inputNuevoProyectoLockOffCasas"
+                        class="form-label"
+                        >Lock off</label
+                      >
+                      <div class="form-check">
+                        <input
+                          class="form-check-input radio-input-modal-casas"
+                          type="radio"
+                          name="flexRadioLockOffCasas"
+                          id="flexRadioLockOffTrueCasas"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="flexRadioLockOffTrueCasas"
+                        >
+                          Sí
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input
+                          class="form-check-input radio-input-modal-casas"
+                          type="radio"
+                          name="flexRadioLockOffCasas"
+                          id="flexRadioLockOffFalseCasas"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="flexRadioLockOffFalseCasas"
+                        >
+                          No
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 radio-check">
+                      <label
+                        for="inputNuevoProyectoHabServicioCasas"
+                        class="form-label"
+                        >Habitación de servicio</label
+                      >
+                      <div class="form-check">
+                        <input
+                          class="form-check-input radio-input-modal-casas"
+                          type="radio"
+                          name="flexRadioHabServicioCasas"
+                          id="flexRadioHabServicioTrueCasas"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="flexRadioHabServicioTrueCasas"
+                        >
+                          Sí
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input
+                          class="form-check-input radio-input-modal-casas"
+                          type="radio"
+                          name="flexRadioHabServicioCasas"
+                          id="flexRadioHabServicioFalseCasas"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="flexRadioHabServicioFalseCasas"
+                        >
+                          No
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 radio-check">
+                      <label
+                        for="inputNuevoProyectoBodegaCasas"
+                        class="form-label"
+                        >Bodega</label
+                      >
+                      <div class="form-check">
+                        <input
+                          class="form-check-input radio-input-modal-casas"
+                          type="radio"
+                          name="flexRadioBodegaCasas"
+                          id="flexRadioBodegaTrueCasas"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="flexRadioBodegaTrueCasas"
+                        >
+                          Sí
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input
+                          class="form-check-input radio-input-modal-casas"
+                          type="radio"
+                          name="flexRadioBodegaCasas"
+                          id="flexRadioBodegaFalseCasas"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="flexRadioBodegaFalseCasas"
+                        >
+                          No
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cerrar
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary btn-add-tipologia-casas"
+              data-bs-dismiss="modal"
+            >
+              Agregar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      id="modalFormCasasEdit"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Tipología - Casas
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-dialog-scrollable">
+            <div class="container">
+              <div class="form-caracteristicas-casas-container">
+                <div class="row">
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 input-campo">
+                      <label
+                        for="inputNuevoProyectoModeloCasas"
+                        class="form-label"
+                        >Modelo</label
+                      >
+                      <input
+                        type="text"
+                        autocomplete="off"
+                        class="form-control field-modal-casas-edit"
+                        id="inputNuevoProyectoModeloCasas"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 input-campo">
+                      <label
+                        for="inputNuevoProyectoPrecioCasas"
+                        class="form-label"
+                        >Precio</label
+                      >
+                      <input
+                        type="text"
+                        autocomplete="off"
+                        class="form-control inputModalNumberCasas field-modal-casas-edit"
+                        id="inputNuevoProyectoPrecioCasas"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 input-campo">
+                      <label
+                        for="inputNuevoProyectoM2ConstruccionCasas"
+                        class="form-label"
+                        >M<sup>2</sup> de construcción</label
+                      >
+                      <input
+                        type="text"
+                        autocomplete="off"
+                        class="form-control inputModalNumberCasas field-modal-casas-edit"
+                        id="inputNuevoProyectoM2ConstruccionCasas"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 input-campo">
+                      <label
+                        for="inputNuevoProyectoM2TerrenoCasas"
+                        class="form-label"
+                        >M<sup>2</sup> de terreno</label
+                      >
+                      <input
+                        type="text"
+                        autocomplete="off"
+                        class="form-control inputModalNumberCasas field-modal-casas-edit"
+                        id="inputNuevoProyectoM2TerrenoCasas"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 input-campo">
+                      <label
+                        for="inputNuevoProyectoNivelesCasas"
+                        class="form-label"
+                        >Niveles</label
+                      >
+                      <input
+                        type="text"
+                        autocomplete="off"
+                        class="form-control inputModalNumberCasas field-modal-casas-edit"
+                        id="inputNuevoProyectoNivelesCasas"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 input-campo">
+                      <label
+                        for="inputNuevoProyectoRecamarasCasas"
+                        class="form-label"
+                        >Recamaras</label
+                      >
+                      <input
+                        type="text"
+                        autocomplete="off"
+                        class="form-control inputModalNumberCasas field-modal-casas-edit"
+                        id="inputNuevoProyectoRecamarasCasas"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 input-campo">
+                      <label
+                        for="inputNuevoProyectoBaniosCasas"
+                        class="form-label"
+                        >Baños</label
+                      >
+                      <input
+                        type="text"
+                        autocomplete="off"
+                        class="form-control inputModalNumberCasas field-modal-casas-edit"
+                        id="inputNuevoProyectoBaniosCasas"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 input-campo">
+                      <label
+                        for="inputNuevoProyectoMedioBaniosCasas"
+                        class="form-label"
+                        >1/2 Baños</label
+                      >
+                      <input
+                        type="text"
+                        autocomplete="off"
+                        class="form-control inputModalNumberCasas field-modal-casas-edit"
+                        id="inputNuevoProyectoMedioBaniosCasas"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 radio-check-terrazas-casas">
+                      <label for="flexRadioTerrazaCasas" class="form-label"
+                        >Terraza</label
+                      >
+                      <div class="form-check">
+                        <input
+                          class="form-check-input radio-input-modal-casas-edit"
+                          type="radio"
+                          name="flexRadioWalkinTerrazaCasas"
+                          id="flexRadioTerrazasTrueCasas"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="flexRadioTerrazasTrueCasas"
+                        >
+                          Sí
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input
+                          class="form-check-input radio-input-modal-casas-edit"
                           type="radio"
                           name="flexRadioWalkinTerrazaCasas"
                           id="flexRadioTerrazasFalseCasas"
@@ -1321,7 +1783,7 @@
                         type="text"
                         autocomplete="off"
                         class="form-control inputModalNumberCasas"
-                        id="inputNuevoProyectoM2DeTerrazasCasas"
+                        id="inputNuevoProyectoM2DeTerrazasCasas field-modal-casas-edit"
                         disabled
                       />
                     </div>
@@ -1336,7 +1798,7 @@
                       <input
                         type="text"
                         autocomplete="off"
-                        class="form-control"
+                        class="form-control field-modal-casas-edit"
                         id="inputNuevoProyectoCondicionesEntrega"
                       />
                     </div>
@@ -1351,182 +1813,194 @@
                       <input
                         type="text"
                         autocomplete="off"
-                        class="form-control inputModalNumberCasas"
+                        class="form-control inputModalNumberCasas field-modal-casas-edit"
                         id="inputNuevoProyectoCajonesEstacionamiento"
                       />
                     </div>
                   </div>
-                  <div class="mb-3 radio-check">
-                    <label
-                      for="inputNuevoProyectoWalkinClosetCasas"
-                      class="form-label"
-                      >Walking closet</label
-                    >
-                    <div class="form-check">
-                      <input
-                        class="form-check-input"
-                        type="radio"
-                        name="flexRadioWalkinClosetCasas"
-                        id="flexRadioWalkinClosetTrueCasas"
-                      />
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 radio-check">
                       <label
-                        class="form-check-label"
-                        for="flexRadioWalkinClosetTrueCasas"
+                        for="inputNuevoProyectoWalkinClosetCasas"
+                        class="form-label"
+                        >Walking closet</label
                       >
-                        Sí
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input
-                        class="form-check-input"
-                        type="radio"
-                        name="flexRadioWalkinClosetCasas"
-                        id="flexRadioWalkinClosetFalseCasas"
-                      />
-                      <label
-                        class="form-check-label"
-                        for="flexRadioWalkinClosetFalseCasas"
-                      >
-                        No
-                      </label>
-                    </div>
-                  </div>
-                  <div class="mb-3 radio-check">
-                    <label for="inputNuevoProyectoFlexCasas" class="form-label"
-                      >Flex</label
-                    >
-                    <div class="form-check">
-                      <input
-                        class="form-check-input"
-                        type="radio"
-                        name="flexRadioFlexCasas"
-                        id="flexRadioFlexTrueCasas"
-                      />
-                      <label
-                        class="form-check-label"
-                        for="flexRadioFlexTrueCasas"
-                      >
-                        Sí
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input
-                        class="form-check-input"
-                        type="radio"
-                        name="flexRadioFlexCasas"
-                        id="flexRadioFlexFalseCasas"
-                      />
-                      <label
-                        class="form-check-label"
-                        for="flexRadioFlexFalseCasas"
-                      >
-                        No
-                      </label>
+                      <div class="form-check">
+                        <input
+                          class="form-check-input radio-input-modal-casas-edit"
+                          type="radio"
+                          name="flexRadioWalkinClosetCasas"
+                          id="flexRadioWalkinClosetTrueCasas"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="flexRadioWalkinClosetTrueCasas"
+                        >
+                          Sí
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input
+                          class="form-check-input radio-input-modal-casas-edit"
+                          type="radio"
+                          name="flexRadioWalkinClosetCasas"
+                          id="flexRadioWalkinClosetFalseCasas"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="flexRadioWalkinClosetFalseCasas"
+                        >
+                          No
+                        </label>
+                      </div>
                     </div>
                   </div>
-                  <div class="mb-3 radio-check">
-                    <label
-                      for="inputNuevoProyectoLockOffCasas"
-                      class="form-label"
-                      >Lock off</label
-                    >
-                    <div class="form-check">
-                      <input
-                        class="form-check-input"
-                        type="radio"
-                        name="flexRadioLockOffCasas"
-                        id="flexRadioLockOffTrueCasas"
-                      />
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 radio-check">
                       <label
-                        class="form-check-label"
-                        for="flexRadioLockOffTrueCasas"
+                        for="inputNuevoProyectoFlexCasas"
+                        class="form-label"
+                        >Flex</label
                       >
-                        Sí
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input
-                        class="form-check-input"
-                        type="radio"
-                        name="flexRadioLockOffCasas"
-                        id="flexRadioLockOffFalseCasas"
-                      />
-                      <label
-                        class="form-check-label"
-                        for="flexRadioLockOffFalseCasas"
-                      >
-                        No
-                      </label>
-                    </div>
-                  </div>
-                  <div class="mb-3 radio-check">
-                    <label
-                      for="inputNuevoProyectoHabServicioCasas"
-                      class="form-label"
-                      >Habitación de servicio</label
-                    >
-                    <div class="form-check">
-                      <input
-                        class="form-check-input"
-                        type="radio"
-                        name="flexRadioHabServicioCasas"
-                        id="flexRadioHabServicioTrueCasas"
-                      />
-                      <label
-                        class="form-check-label"
-                        for="flexRadioHabServicioTrueCasas"
-                      >
-                        Sí
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input
-                        class="form-check-input"
-                        type="radio"
-                        name="flexRadioHabServicioCasas"
-                        id="flexRadioHabServicioFalseCasas"
-                      />
-                      <label
-                        class="form-check-label"
-                        for="flexRadioHabServicioFalseCasas"
-                      >
-                        No
-                      </label>
+                      <div class="form-check">
+                        <input
+                          class="form-check-input radio-input-modal-casas-edit"
+                          type="radio"
+                          name="flexRadioFlexCasas"
+                          id="flexRadioFlexTrueCasas"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="flexRadioFlexTrueCasas"
+                        >
+                          Sí
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input
+                          class="form-check-input radio-input-modal-casas-edit"
+                          type="radio"
+                          name="flexRadioFlexCasas"
+                          id="flexRadioFlexFalseCasas"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="flexRadioFlexFalseCasas"
+                        >
+                          No
+                        </label>
+                      </div>
                     </div>
                   </div>
-                  <div class="mb-3 radio-check">
-                    <label
-                      for="inputNuevoProyectoBodegaCasas"
-                      class="form-label"
-                      >Bodega</label
-                    >
-                    <div class="form-check">
-                      <input
-                        class="form-check-input"
-                        type="radio"
-                        name="flexRadioBodegaCasas"
-                        id="flexRadioBodegaTrueCasas"
-                      />
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 radio-check">
                       <label
-                        class="form-check-label"
-                        for="flexRadioBodegaTrueCasas"
+                        for="inputNuevoProyectoLockOffCasas"
+                        class="form-label"
+                        >Lock off</label
                       >
-                        Sí
-                      </label>
+                      <div class="form-check">
+                        <input
+                          class="form-check-input radio-input-modal-casas-edit"
+                          type="radio"
+                          name="flexRadioLockOffCasas"
+                          id="flexRadioLockOffTrueCasas"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="flexRadioLockOffTrueCasas"
+                        >
+                          Sí
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input
+                          class="form-check-input radio-input-modal-casas-edit"
+                          type="radio"
+                          name="flexRadioLockOffCasas"
+                          id="flexRadioLockOffFalseCasas"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="flexRadioLockOffFalseCasas"
+                        >
+                          No
+                        </label>
+                      </div>
                     </div>
-                    <div class="form-check">
-                      <input
-                        class="form-check-input"
-                        type="radio"
-                        name="flexRadioBodegaCasas"
-                        id="flexRadioBodegaFalseCasas"
-                      />
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 radio-check">
                       <label
-                        class="form-check-label"
-                        for="flexRadioBodegaFalseCasas"
+                        for="inputNuevoProyectoHabServicioCasas"
+                        class="form-label"
+                        >Habitación de servicio</label
                       >
-                        No
-                      </label>
+                      <div class="form-check">
+                        <input
+                          class="form-check-input radio-input-modal-casas-edit"
+                          type="radio"
+                          name="flexRadioHabServicioCasas"
+                          id="flexRadioHabServicioTrueCasas"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="flexRadioHabServicioTrueCasas"
+                        >
+                          Sí
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input
+                          class="form-check-input radio-input-modal-casas-edit"
+                          type="radio"
+                          name="flexRadioHabServicioCasas"
+                          id="flexRadioHabServicioFalseCasas"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="flexRadioHabServicioFalseCasas"
+                        >
+                          No
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 radio-check">
+                      <label
+                        for="inputNuevoProyectoBodegaCasas"
+                        class="form-label"
+                        >Bodega</label
+                      >
+                      <div class="form-check">
+                        <input
+                          class="form-check-input radio-input-modal-casas-edit"
+                          type="radio"
+                          name="flexRadioBodegaCasas"
+                          id="flexRadioBodegaTrueCasas"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="flexRadioBodegaTrueCasas"
+                        >
+                          Sí
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input
+                          class="form-check-input radio-input-modal-casas-edit"
+                          type="radio"
+                          name="flexRadioBodegaCasas"
+                          id="flexRadioBodegaFalseCasas"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="flexRadioBodegaFalseCasas"
+                        >
+                          No
+                        </label>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -1541,7 +2015,10 @@
             >
               Cerrar
             </button>
-            <button type="button" class="btn btn-primary">
+            <button
+              type="button"
+              class="btn btn-primary btn-add-tipologia-casas-edit"
+            >
               Guardar cambios
             </button>
           </div>
@@ -1629,6 +2106,8 @@
                         autocomplete="off"
                         class="form-control inputModalNumberDepas"
                         id="inputNuevoProyectoPrecioPorM2Departamentos"
+                        disabled
+                        readonly
                       />
                     </div>
                   </div>
@@ -1989,7 +2468,7 @@
               <div class="form-caracteristicas-terrenos-container">
                 <div class="row">
                   <div class="col-12 col-md-6">
-                    <div class="mb-3 input-campo">
+                    <div class="mb-3 input-campo field-modal-terrain">
                       <label
                         for="inputNuevoProyectoModeloTerrenos"
                         class="form-label"
@@ -2004,7 +2483,7 @@
                     </div>
                   </div>
                   <div class="col-12 col-md-6">
-                    <div class="mb-3 input-campo">
+                    <div class="mb-3 input-campo field-modal-terrain">
                       <label
                         for="inputNuevoProyectoPrecioTerrenos"
                         class="form-label"
@@ -2019,7 +2498,7 @@
                     </div>
                   </div>
                   <div class="col-12 col-md-6">
-                    <div class="mb-3 input-campo">
+                    <div class="mb-3 input-campo field-modal-terrain">
                       <label
                         for="inputNuevoProyectoM2TerrenoTerrenos"
                         class="form-label"
@@ -2034,7 +2513,7 @@
                     </div>
                   </div>
                   <div class="col-12 col-md-6">
-                    <div class="mb-3 input-campo">
+                    <div class="mb-3 input-campo field-modal-terrain">
                       <label
                         for="inputNuevoProyectoFrenteTerrenos"
                         class="form-label"
@@ -2049,7 +2528,7 @@
                     </div>
                   </div>
                   <div class="col-12 col-md-6">
-                    <div class="mb-3 input-campo">
+                    <div class="mb-3 input-campo field-modal-terrain">
                       <label
                         for="inputNuevoProyectoFondoTerrenos"
                         class="form-label"
@@ -2064,7 +2543,7 @@
                     </div>
                   </div>
                   <div class="col-12 col-md-6">
-                    <div class="mb-3 input-campo">
+                    <div class="mb-3 input-campo field-modal-terrain">
                       <label
                         for="inputNuevoProyectoPrecioPorM2Terrenos"
                         class="form-label"
@@ -2079,7 +2558,7 @@
                     </div>
                   </div>
                   <div class="col-12 col-md-6">
-                    <div class="mb-3 input-campo">
+                    <div class="mb-3 input-campo field-modal-terrain">
                       <label
                         for="inputNuevoProyectoCusTerrenos"
                         class="form-label"
@@ -2094,7 +2573,7 @@
                     </div>
                   </div>
                   <div class="col-12 col-md-6">
-                    <div class="mb-3 input-campo">
+                    <div class="mb-3 input-campo field-modal-terrain">
                       <label
                         for="inputNuevoProyectoCusM2Terrenos"
                         class="form-label"
@@ -2109,7 +2588,7 @@
                     </div>
                   </div>
                   <div class="col-12 col-md-6">
-                    <div class="mb-3 input-campo">
+                    <div class="mb-3 input-campo field-modal-terrain">
                       <label
                         for="inputNuevoProyectoCosTerrenos"
                         class="form-label"
@@ -2124,7 +2603,7 @@
                     </div>
                   </div>
                   <div class="col-12 col-md-6">
-                    <div class="mb-3 input-campo">
+                    <div class="mb-3 input-campo field-modal-terrain">
                       <label
                         for="inputNuevoProyectoCosM2Terrenos"
                         class="form-label"
@@ -2139,7 +2618,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="mb-3 input-campo">
+                <div class="mb-3 input-campo field-modal-terrain">
                   <label
                     for="inputNuevoProyectoAlturaMaximaTerrenos"
                     class="form-label"
@@ -2163,8 +2642,222 @@
             >
               Cerrar
             </button>
-            <button type="button" class="btn btn-primary">
-              Guardar cambios
+            <button
+              type="button"
+              class="btn btn-primary btn-add-tipologia-terrenos"
+              data-bs-dismiss="modal"
+            >
+              Agregar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      id="modalFormTerrenosEdit"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Tipología - Terrenos
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-dialog-scrollable">
+            <div class="container">
+              <div class="form-caracteristicas-terrenos-container">
+                <div class="row">
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 input-campo field-modal-terrain-edit">
+                      <label
+                        for="inputNuevoProyectoModeloTerrenos"
+                        class="form-label"
+                        >Modelo</label
+                      >
+                      <input
+                        type="text"
+                        autocomplete="off"
+                        class="form-control"
+                        id="inputNuevoProyectoModeloTerrenos"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 input-campo field-modal-terrain-edit">
+                      <label
+                        for="inputNuevoProyectoPrecioTerrenos"
+                        class="form-label"
+                        >Precio</label
+                      >
+                      <input
+                        type="text"
+                        autocomplete="off"
+                        class="form-control inputModalNumberTerreno"
+                        id="inputNuevoProyectoPrecioTerrenos"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 input-campo field-modal-terrain-edit">
+                      <label
+                        for="inputNuevoProyectoM2TerrenoTerrenos"
+                        class="form-label"
+                        >M<sup>2</sup> de terreno</label
+                      >
+                      <input
+                        type="text"
+                        autocomplete="off"
+                        class="form-control inputModalNumberTerreno"
+                        id="inputNuevoProyectoM2TerrenoTerrenos"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 input-campo field-modal-terrain-edit">
+                      <label
+                        for="inputNuevoProyectoFrenteTerrenos"
+                        class="form-label"
+                        >Frente</label
+                      >
+                      <input
+                        type="text"
+                        autocomplete="off"
+                        class="form-control inputModalNumberTerreno"
+                        id="inputNuevoProyectoFrenteTerrenos"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 input-campo field-modal-terrain-edit">
+                      <label
+                        for="inputNuevoProyectoFondoTerrenos"
+                        class="form-label"
+                        >Fondo</label
+                      >
+                      <input
+                        type="text"
+                        autocomplete="off"
+                        class="form-control inputModalNumberTerreno"
+                        id="inputNuevoProyectoFondoTerrenos"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 input-campo field-modal-terrain-edit">
+                      <label
+                        for="inputNuevoProyectoPrecioPorM2Terrenos"
+                        class="form-label"
+                        >Precio / M<sup>2</sup></label
+                      >
+                      <input
+                        type="text"
+                        autocomplete="off"
+                        class="form-control inputModalNumberTerreno"
+                        id="inputNuevoProyectoPrecioPorM2Terrenos"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 input-campo field-modal-terrain-edit">
+                      <label
+                        for="inputNuevoProyectoCusTerrenos"
+                        class="form-label"
+                        >Cus</label
+                      >
+                      <input
+                        type="text"
+                        autocomplete="off"
+                        class="form-control inputModalNumberTerreno"
+                        id="inputNuevoProyectoCusTerrenos"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 input-campo field-modal-terrain-edit">
+                      <label
+                        for="inputNuevoProyectoCusM2Terrenos"
+                        class="form-label"
+                        >Cus total en m<sup>2</sup></label
+                      >
+                      <input
+                        type="text"
+                        autocomplete="off"
+                        class="form-control inputModalNumberTerreno"
+                        id="inputNuevoProyectoCusM2Terrenos"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 input-campo field-modal-terrain-edit">
+                      <label
+                        for="inputNuevoProyectoCosTerrenos"
+                        class="form-label"
+                        >Cos</label
+                      >
+                      <input
+                        type="text"
+                        autocomplete="off"
+                        class="form-control inputModalNumberTerreno"
+                        id="inputNuevoProyectoCosTerrenos"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 input-campo field-modal-terrain-edit">
+                      <label
+                        for="inputNuevoProyectoCosM2Terrenos"
+                        class="form-label"
+                        >Cos total en m<sup>2</sup></label
+                      >
+                      <input
+                        type="text"
+                        autocomplete="off"
+                        class="form-control inputModalNumberTerreno"
+                        id="inputNuevoProyectoCosM2Terrenos"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="mb-3 input-campo field-modal-terrain-edit">
+                  <label
+                    for="inputNuevoProyectoAlturaMaximaTerrenos"
+                    class="form-label"
+                    >Altura máxima (en pisos)</label
+                  >
+                  <input
+                    type="text"
+                    autocomplete="off"
+                    class="form-control inputModalNumberTerreno"
+                    id="inputNuevoProyectoAlturaMaximaTerrenos"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cerrar
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary btn-add-tipologia-terrenos-edit"
+              data-bs-dismiss="modal"
+            >
+              Guardar
             </button>
           </div>
         </div>
@@ -2174,5 +2867,6 @@
     <script src="./js/script.js"></script>
     <script src="./js/validateForm.js"></script>
     <script src="./js/addAmenidades.js"></script>
+    <script src="./js/addTipologias.js"></script>
   </body>
 </html>

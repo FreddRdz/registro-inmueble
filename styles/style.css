@@ -2,7 +2,9 @@
   cursor: help;
 }
 
-.task-casas {
+.task-casas,
+.task-departamentos,
+.task-terrenos {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -14,71 +16,15 @@
   margin: 0;
 }
 
-.task-casas .settings-casas {
-  cursor: pointer;
-  position: relative;
-}
-
-.settings-casas .task-menu-casas {
-  background: #fff;
-  padding: 5px 0;
-  position: absolute;
-  right: -5px;
-  transform: scale(0);
-  bottom: -65px;
-  z-index: 2;
-  list-style: none;
-  border-radius: 4px;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
-  transform-origin: top right;
-  transition: transform 0.2s ease;
-}
-
-.settings-casas:hover .task-menu-casas {
-  transform: scale(1);
-}
-
-.task-menu-casas li {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  justify-content: space-between;
-  height: 25px;
-  font-size: 16px;
-  padding: 17px 15px;
-  margin-bottom: 2px;
-  justify-content: flex-start;
-}
-
-.task-menu-casas li:last-child {
-  margin-bottom: 0;
-}
-
-.task-menu-casas li:hover {
-  background: #f5f5f5;
-}
-
-.task-menu-casas li i {
-  padding-right: 8px;
-}
-
-.task-departamentos {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 8px;
-}
-
-.task-text {
-  list-style: none;
-  margin: 0;
-}
-
+.task-casas .settings-casas,
+.task-terrenos .settings-terrenos,
 .task-departamentos .settings-departamentos {
   cursor: pointer;
   position: relative;
 }
 
+.settings-casas .task-menu-casas,
+.settings-terrenos .task-menu-terrenos,
 .settings-departamentos .task-menu-departamentos {
   background: #fff;
   padding: 5px 0;
@@ -94,10 +40,14 @@
   transition: transform 0.2s ease;
 }
 
+.settings-casas:hover .task-menu-casas,
+.settings-terrenos:hover .task-menu-terrenos,
 .settings-departamentos:hover .task-menu-departamentos {
   transform: scale(1);
 }
 
+.task-menu-casas li,
+.task-menu-terrenos li,
 .task-menu-departamentos li {
   display: flex;
   align-items: center;
@@ -110,14 +60,20 @@
   justify-content: flex-start;
 }
 
+.task-menu-casas li:last-child,
+.task-menu-terrenos li:last-child,
 .task-menu-departamentos li:last-child {
   margin-bottom: 0;
 }
 
+.task-menu-casas li:hover,
+.task-menu-terrenos li:hover,
 .task-menu-departamentos li:hover {
   background: #f5f5f5;
 }
 
+.task-menu-casas li i,
+.task-menu-terrenos li i,
 .task-menu-departamentos li i {
   padding-right: 8px;
 }
