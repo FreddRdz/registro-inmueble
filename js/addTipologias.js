@@ -141,6 +141,18 @@ const checkRadiosInputsHouses = document.querySelectorAll(
   '.radio-input-modal-casas'
 );
 
+const fieldsInputsHousesEdit = document.querySelectorAll(
+  '.field-modal-casas-edit'
+);
+
+const checkRadiosInputsHousesEdit = document.querySelectorAll(
+  '.radio-input-modal-casas-edit'
+);
+
+const btnModifyTipologyHouse = document.querySelector(
+  '.btn-add-tipologia-casas-edit'
+);
+
 let tipologiesHouses = [];
 let idEditHouse;
 
@@ -156,10 +168,10 @@ const showTipologiesHouses = () => {
             ${tipology.modelo}
           </td>
           <td class="text-center">
-            <button 
-            class="button-table" 
+            <button
+            class="button-table"
             data-bs-toggle="modal"
-            data-bs-target="#modalFormHousesEdit" 
+            data-bs-target="#modalFormCasasEdit"
             onClick="editTipologyHouses(${id})">
               <i class="fa-solid fa-pen fa-lg pen-icon"></i>
             </button>
@@ -245,3 +257,281 @@ const deleteTipologyHouses = (id) => {
 
   showTipologiesHouses();
 };
+
+const editTipologyHouses = (id) => {
+  idEditHouse = id;
+  const tipologyModified = { ...tipologiesHouses[id] };
+
+  fieldsInputsHousesEdit[0].value = tipologyModified.modelo;
+  fieldsInputsHousesEdit[1].value = tipologyModified.precio;
+  fieldsInputsHousesEdit[2].value = tipologyModified.m2Construccion;
+  fieldsInputsHousesEdit[3].value = tipologyModified.m2Terreno;
+  fieldsInputsHousesEdit[4].value = tipologyModified.niveles;
+  fieldsInputsHousesEdit[5].value = tipologyModified.recamaras;
+  fieldsInputsHousesEdit[6].value = tipologyModified.banios;
+  fieldsInputsHousesEdit[7].value = tipologyModified.halfBanios;
+  fieldsInputsHousesEdit[8].value = tipologyModified.m2Terrazas;
+  fieldsInputsHousesEdit[9].value = tipologyModified.condiciones;
+  fieldsInputsHousesEdit[10].value = tipologyModified.cajones;
+  checkRadiosInputsHousesEdit[0].checked = tipologyModified.terrazas[0];
+  checkRadiosInputsHousesEdit[1].checked = tipologyModified.terrazas[1];
+  checkRadiosInputsHousesEdit[2].checked = tipologyModified.walkingCloset[0];
+  checkRadiosInputsHousesEdit[3].checked = tipologyModified.walkingCloset[1];
+  checkRadiosInputsHousesEdit[4].checked = tipologyModified.flex[0];
+  checkRadiosInputsHousesEdit[5].checked = tipologyModified.flex[1];
+  checkRadiosInputsHousesEdit[6].checked = tipologyModified.lockOff[0];
+  checkRadiosInputsHousesEdit[7].checked = tipologyModified.lockOff[1];
+  checkRadiosInputsHousesEdit[8].checked = tipologyModified.habServicio[0];
+  checkRadiosInputsHousesEdit[9].checked = tipologyModified.habServicio[1];
+  checkRadiosInputsHousesEdit[10].checked = tipologyModified.bodega[0];
+  checkRadiosInputsHousesEdit[11].checked = tipologyModified.bodega[1];
+};
+
+btnModifyTipologyHouse.addEventListener('click', () => {
+  const tipologyModified = {
+    modelo: fieldsInputsHousesEdit[0].value.trim(),
+    precio: fieldsInputsHousesEdit[1].value.trim(),
+    m2Construccion: fieldsInputsHousesEdit[2].value.trim(),
+    m2Terreno: fieldsInputsHousesEdit[3].value.trim(),
+    niveles: fieldsInputsHousesEdit[4].value.trim(),
+    recamaras: fieldsInputsHousesEdit[5].value.trim(),
+    banios: fieldsInputsHousesEdit[6].value.trim(),
+    halfBanios: fieldsInputsHousesEdit[7].value.trim(),
+    m2Terrazas: fieldsInputsHousesEdit[8].value.trim(),
+    condiciones: fieldsInputsHousesEdit[9].value.trim(),
+    cajones: fieldsInputsHousesEdit[10].value.trim(),
+    terrazas: [
+      checkRadiosInputsHousesEdit[0].checked,
+      checkRadiosInputsHousesEdit[1].checked,
+    ],
+    walkingCloset: [
+      checkRadiosInputsHousesEdit[2].checked,
+      checkRadiosInputsHousesEdit[3].checked,
+    ],
+    flex: [
+      checkRadiosInputsHousesEdit[4].checked,
+      checkRadiosInputsHousesEdit[5].checked,
+    ],
+    lockOff: [
+      checkRadiosInputsHousesEdit[6].checked,
+      checkRadiosInputsHousesEdit[7].checked,
+    ],
+    habServicio: [
+      checkRadiosInputsHousesEdit[8].checked,
+      checkRadiosInputsHousesEdit[9].checked,
+    ],
+    bodega: [
+      checkRadiosInputsHousesEdit[10].checked,
+      checkRadiosInputsHousesEdit[11].checked,
+    ],
+  };
+
+  tipologiesHouses[idEditHouse] = { ...tipologyModified };
+
+  showTipologiesHouses();
+});
+
+// Añadir tipologías en las tablas de los departamentos
+
+const btnAddTipologyDepartments = document.querySelector(
+  '.btn-add-tipologia-departamentos'
+);
+
+const rowBodyDepartments = document.querySelector('.t-body-departamentos');
+
+const fieldsInputsDepartments = document.querySelectorAll(
+  '.field-modal-departamentos'
+);
+
+const checkRadiosInputsDepartments = document.querySelectorAll(
+  '.radio-input-modal-departamentos'
+);
+
+const fieldsInputsDepartmentsEdit = document.querySelectorAll(
+  '.field-modal-departamentos-edit'
+);
+
+const checkRadiosInputsDepartmentsEdit = document.querySelectorAll(
+  '.radio-input-modal-departamentos-edit'
+);
+
+const btnModifyTipologyDepartments = document.querySelector(
+  '.btn-add-tipologia-departamentos-edit'
+);
+
+let tipologiesDepartments = [];
+let idEditDepartments;
+
+const showTipologiesDepartments = () => {
+  let tr = '';
+
+  if (tipologiesDepartments) {
+    tipologiesDepartments.forEach((tipology, id) => {
+      tr += `
+        <tr>
+          <th scope="row" class="text-center">${id + 1}</th>
+          <td class="text-center">
+            ${tipology.modelo}
+          </td>
+          <td class="text-center">
+            <button
+            class="button-table"
+            data-bs-toggle="modal"
+            data-bs-target="#modalFormDepartamentosEdit"
+            onClick="editTipologyDepartments(${id})">
+              <i class="fa-solid fa-pen fa-lg pen-icon"></i>
+            </button>
+          </td>
+          <td class="text-center">
+            <button class="button-table" onClick="deleteTipologyDepartments(${id})">
+              <i
+                class="fa-solid fa-trash fa-lg trash-icon"
+              ></i>
+            </button>
+          </td>
+        </tr>
+      `;
+    });
+  }
+
+  rowBodyDepartments.innerHTML = tr;
+};
+
+showTipologiesDepartments();
+
+btnAddTipologyDepartments.addEventListener('click', () => {
+  const tipology = {
+    modelo: fieldsInputsDepartments[0].value.trim(),
+    precio: fieldsInputsDepartments[1].value.trim(),
+    m2: fieldsInputsDepartments[2].value.trim(),
+    precioM2: fieldsInputsDepartments[3].value.trim(),
+    recamaras: fieldsInputsDepartments[4].value.trim(),
+    banios: fieldsInputsDepartments[5].value.trim(),
+    halfBanios: fieldsInputsDepartments[6].value.trim(),
+    m2Terrazas: fieldsInputsDepartments[7].value.trim(),
+    cajones: fieldsInputsDepartments[8].value.trim(),
+    condiciones: fieldsInputsDepartments[9].value.trim(),
+    terrazas: [
+      checkRadiosInputsDepartments[0].checked,
+      checkRadiosInputsDepartments[1].checked,
+    ],
+    walkingCloset: [
+      checkRadiosInputsDepartments[2].checked,
+      checkRadiosInputsDepartments[3].checked,
+    ],
+    flex: [
+      checkRadiosInputsDepartments[4].checked,
+      checkRadiosInputsDepartments[5].checked,
+    ],
+    lockOff: [
+      checkRadiosInputsDepartments[6].checked,
+      checkRadiosInputsDepartments[7].checked,
+    ],
+    habServicio: [
+      checkRadiosInputsDepartments[8].checked,
+      checkRadiosInputsDepartments[9].checked,
+    ],
+    bodega: [
+      checkRadiosInputsDepartments[10].checked,
+      checkRadiosInputsDepartments[11].checked,
+    ],
+  };
+
+  tipologiesDepartments.push(tipology);
+
+  fieldsInputsDepartments.forEach((field) => {
+    field.value = '';
+  });
+
+  checkRadiosInputsDepartments.forEach((checkBox) => {
+    checkBox.checked = false;
+  });
+
+  showTipologiesDepartments();
+});
+
+const deleteTipologyDepartments = (id) => {
+  let array = [];
+
+  for (let i = 0; i < tipologiesDepartments.length; i++) {
+    if (i !== id) {
+      array.push(tipologiesDepartments[i]);
+    }
+  }
+  tipologiesDepartments = [...array];
+
+  showTipologiesDepartments();
+};
+
+const editTipologyDepartments = (id) => {
+  idEditDepartments = id;
+  const tipologyModified = { ...tipologiesDepartments[id] };
+
+  fieldsInputsDepartmentsEdit[0].value = tipologyModified.modelo;
+  fieldsInputsDepartmentsEdit[1].value = tipologyModified.precio;
+  fieldsInputsDepartmentsEdit[2].value = tipologyModified.m2;
+  fieldsInputsDepartmentsEdit[3].value = tipologyModified.precioM2;
+  fieldsInputsDepartmentsEdit[4].value = tipologyModified.recamaras;
+  fieldsInputsDepartmentsEdit[5].value = tipologyModified.banios;
+  fieldsInputsDepartmentsEdit[6].value = tipologyModified.halfBanios;
+  fieldsInputsDepartmentsEdit[7].value = tipologyModified.m2Terrazas;
+  fieldsInputsDepartmentsEdit[8].value = tipologyModified.cajones;
+  fieldsInputsDepartmentsEdit[9].value = tipologyModified.condiciones;
+  checkRadiosInputsDepartmentsEdit[0].checked = tipologyModified.terrazas[0];
+  checkRadiosInputsDepartmentsEdit[1].checked = tipologyModified.terrazas[1];
+  checkRadiosInputsDepartmentsEdit[2].checked =
+    tipologyModified.walkingCloset[0];
+  checkRadiosInputsDepartmentsEdit[3].checked =
+    tipologyModified.walkingCloset[1];
+  checkRadiosInputsDepartmentsEdit[4].checked = tipologyModified.flex[0];
+  checkRadiosInputsDepartmentsEdit[5].checked = tipologyModified.flex[1];
+  checkRadiosInputsDepartmentsEdit[6].checked = tipologyModified.lockOff[0];
+  checkRadiosInputsDepartmentsEdit[7].checked = tipologyModified.lockOff[1];
+  checkRadiosInputsDepartmentsEdit[8].checked = tipologyModified.habServicio[0];
+  checkRadiosInputsDepartmentsEdit[9].checked = tipologyModified.habServicio[1];
+  checkRadiosInputsDepartmentsEdit[10].checked = tipologyModified.bodega[0];
+  checkRadiosInputsDepartmentsEdit[11].checked = tipologyModified.bodega[1];
+};
+
+btnModifyTipologyDepartments.addEventListener('click', () => {
+  const tipologyModified = {
+    modelo: fieldsInputsDepartmentsEdit[0].value.trim(),
+    precio: fieldsInputsDepartmentsEdit[1].value.trim(),
+    m2: fieldsInputsDepartmentsEdit[2].value.trim(),
+    precioM2: fieldsInputsDepartmentsEdit[3].value.trim(),
+    recamaras: fieldsInputsDepartmentsEdit[4].value.trim(),
+    banios: fieldsInputsDepartmentsEdit[5].value.trim(),
+    halfBanios: fieldsInputsDepartmentsEdit[6].value.trim(),
+    m2Terrazas: fieldsInputsDepartmentsEdit[7].value.trim(),
+    cajones: fieldsInputsDepartmentsEdit[8].value.trim(),
+    condiciones: fieldsInputsDepartmentsEdit[9].value.trim(),
+    terrazas: [
+      checkRadiosInputsDepartmentsEdit[0].checked,
+      checkRadiosInputsDepartmentsEdit[1].checked,
+    ],
+    walkingCloset: [
+      checkRadiosInputsDepartmentsEdit[2].checked,
+      checkRadiosInputsDepartmentsEdit[3].checked,
+    ],
+    flex: [
+      checkRadiosInputsDepartmentsEdit[4].checked,
+      checkRadiosInputsDepartmentsEdit[5].checked,
+    ],
+    lockOff: [
+      checkRadiosInputsDepartmentsEdit[6].checked,
+      checkRadiosInputsDepartmentsEdit[7].checked,
+    ],
+    habServicio: [
+      checkRadiosInputsDepartmentsEdit[8].checked,
+      checkRadiosInputsDepartmentsEdit[9].checked,
+    ],
+    bodega: [
+      checkRadiosInputsDepartmentsEdit[10].checked,
+      checkRadiosInputsDepartmentsEdit[11].checked,
+    ],
+  };
+
+  tipologiesDepartments[idEditDepartments] = { ...tipologyModified };
+
+  showTipologiesDepartments();
+});

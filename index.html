@@ -79,7 +79,6 @@
               </div>
             </div>
           </div>
-
           <div class="mb-3 w-100 d-flex justify-content-center">
             <button
               type="button"
@@ -1026,44 +1025,7 @@
                             <th scope="col" class="text-center">Eliminar</th>
                           </tr>
                         </thead>
-                        <tbody class="t-body-casas">
-                          <tr>
-                            <th scope="row" class="text-center">1</th>
-                            <td class="text-center">
-                              <i class="fa-solid fa-xmark fa-lg"></i>
-                            </td>
-                            <td class="text-center">
-                              <button class="button-table">
-                                <i class="fa-solid fa-pen fa-lg pen-icon"></i>
-                              </button>
-                            </td>
-                            <td class="text-center">
-                              <button class="button-table">
-                                <i
-                                  class="fa-solid fa-trash fa-lg trash-icon"
-                                ></i>
-                              </button>
-                            </td>
-                          </tr>
-                          <tr>
-                            <th scope="row" class="text-center">2</th>
-                            <td class="text-center">
-                              <i class="fa-solid fa-check fa-lg"></i>
-                            </td>
-                            <td class="text-center">
-                              <button class="button-table">
-                                <i class="fa-solid fa-pen fa-lg pen-icon"></i>
-                              </button>
-                            </td>
-                            <td class="text-center">
-                              <button class="button-table">
-                                <i
-                                  class="fa-solid fa-trash fa-lg trash-icon"
-                                ></i>
-                              </button>
-                            </td>
-                          </tr>
-                        </tbody>
+                        <tbody class="t-body-casas"></tbody>
                       </table>
                     </div>
                     <div class="table-departamentos">
@@ -1076,7 +1038,7 @@
                           Agregar tipología
                         </button>
                       </div>
-                      <table class="table table-departamentos">
+                      <table class="table">
                         <thead>
                           <tr>
                             <th scope="col" class="text-center">#</th>
@@ -1085,7 +1047,7 @@
                             <th scope="col" class="text-center">Eliminar</th>
                           </tr>
                         </thead>
-                        <tbody>
+                        <tbody class="t-body-departamentos">
                           <tr>
                             <th scope="row" class="text-center">1</th>
                             <td class="text-center">
@@ -1782,8 +1744,8 @@
                       <input
                         type="text"
                         autocomplete="off"
-                        class="form-control inputModalNumberCasas"
-                        id="inputNuevoProyectoM2DeTerrazasCasas field-modal-casas-edit"
+                        class="form-control inputModalNumberCasas field-modal-casas-edit"
+                        id="inputNuevoProyectoM2DeTerrazasCasas"
                         disabled
                       />
                     </div>
@@ -2018,6 +1980,7 @@
             <button
               type="button"
               class="btn btn-primary btn-add-tipologia-casas-edit"
+              data-bs-dismiss="modal"
             >
               Guardar cambios
             </button>
@@ -2059,7 +2022,7 @@
                       <input
                         type="text"
                         autocomplete="off"
-                        class="form-control"
+                        class="form-control field-modal-departamentos"
                         id="inputNuevoProyectoModeloDepartamentos"
                       />
                     </div>
@@ -2074,7 +2037,7 @@
                       <input
                         type="text"
                         autocomplete="off"
-                        class="form-control inputModalNumberDepas"
+                        class="form-control inputModalNumberDepas field-modal-departamentos"
                         id="inputNuevoProyectoPrecioDepartamentos"
                       />
                     </div>
@@ -2089,7 +2052,7 @@
                       <input
                         type="text"
                         autocomplete="off"
-                        class="form-control inputModalNumberDepas"
+                        class="form-control inputModalNumberDepas field-modal-departamentos"
                         id="inputNuevoProyectoM2Departamentos"
                       />
                     </div>
@@ -2104,7 +2067,7 @@
                       <input
                         type="text"
                         autocomplete="off"
-                        class="form-control inputModalNumberDepas"
+                        class="form-control inputModalNumberDepas field-modal-departamentos"
                         id="inputNuevoProyectoPrecioPorM2Departamentos"
                         disabled
                         readonly
@@ -2121,7 +2084,7 @@
                       <input
                         type="text"
                         autocomplete="off"
-                        class="form-control inputModalNumberDepas"
+                        class="form-control inputModalNumberDepas field-modal-departamentos"
                         id="inputNuevoProyectoRecamarasDepartamentos"
                       />
                     </div>
@@ -2136,7 +2099,7 @@
                       <input
                         type="text"
                         autocomplete="off"
-                        class="form-control inputModalNumberDepas"
+                        class="form-control inputModalNumberDepas field-modal-departamentos"
                         id="inputNuevoProyectoBaniosDepartamentos"
                       />
                     </div>
@@ -2151,7 +2114,7 @@
                   <input
                     type="text"
                     autocomplete="off"
-                    class="form-control inputModalNumberDepas"
+                    class="form-control inputModalNumberDepas field-modal-departamentos"
                     id="inputNuevoProyectoMedioBaniosDepartamentos"
                   />
                 </div>
@@ -2165,7 +2128,7 @@
                       >
                       <div class="form-check">
                         <input
-                          class="form-check-input"
+                          class="form-check-input radio-input-modal-departamentos"
                           type="radio"
                           name="flexRadioWalkinTerrazaDepartamentos"
                           id="flexRadioWalkinTerrazaTrueDepartamentos"
@@ -2179,7 +2142,7 @@
                       </div>
                       <div class="form-check">
                         <input
-                          class="form-check-input"
+                          class="form-check-input radio-input-modal-departamentos"
                           type="radio"
                           name="flexRadioWalkinTerrazaDepartamentos"
                           id="flexRadioWalkinTerrazaFalseDepartamentos"
@@ -2203,7 +2166,7 @@
                       <input
                         type="text"
                         autocomplete="off"
-                        class="form-control inputModalNumberDepas"
+                        class="form-control inputModalNumberDepas field-modal-departamentos"
                         id="inputNuevoProyectoM2DeTerrazasDepartamentos"
                         disabled
                       />
@@ -2219,7 +2182,7 @@
                       <input
                         type="text"
                         autocomplete="off"
-                        class="form-control inputModalNumberDepas"
+                        class="form-control inputModalNumberDepas field-modal-departamentos"
                         id="inputNuevoProyectoM2TerrenoDepartamentos"
                       />
                     </div>
@@ -2234,7 +2197,7 @@
                       <input
                         type="text"
                         autocomplete="off"
-                        class="form-control"
+                        class="form-control field-modal-departamentos"
                         id="inputNuevoProyectoM2TerrenoDepartamentos"
                       />
                     </div>
@@ -2250,7 +2213,7 @@
                       >
                       <div class="form-check">
                         <input
-                          class="form-check-input"
+                          class="form-check-input radio-input-modal-departamentos"
                           type="radio"
                           name="flexRadioWalkinClosetDepartamentos"
                           id="flexRadioWalkinClosetTrueDepartamentos"
@@ -2264,7 +2227,7 @@
                       </div>
                       <div class="form-check">
                         <input
-                          class="form-check-input"
+                          class="form-check-input radio-input-modal-departamentos"
                           type="radio"
                           name="flexRadioWalkinClosetDepartamentos"
                           id="flexRadioWalkinClosetFalseDepartamentos"
@@ -2287,7 +2250,7 @@
                       >
                       <div class="form-check">
                         <input
-                          class="form-check-input"
+                          class="form-check-input radio-input-modal-departamentos"
                           type="radio"
                           name="flexRadioFlexDepartamentos"
                           id="flexRadioFlexTrueDepartamentos"
@@ -2301,7 +2264,7 @@
                       </div>
                       <div class="form-check">
                         <input
-                          class="form-check-input"
+                          class="form-check-input radio-input-modal-departamentos"
                           type="radio"
                           name="flexRadioFlexDepartamentos"
                           id="flexRadioWalkinClosetFalseDepartamentos"
@@ -2324,7 +2287,7 @@
                       >
                       <div class="form-check">
                         <input
-                          class="form-check-input"
+                          class="form-check-input radio-input-modal-departamentos"
                           type="radio"
                           name="flexRadioLockOffDepartamentos"
                           id="flexRadioLockOffTrueDepartamentos"
@@ -2338,7 +2301,7 @@
                       </div>
                       <div class="form-check">
                         <input
-                          class="form-check-input"
+                          class="form-check-input radio-input-modal-departamentos"
                           type="radio"
                           name="flexRadioLockOffDepartamentos"
                           id="flexRadioLockOffFalseDepartamentos"
@@ -2361,7 +2324,7 @@
                       >
                       <div class="form-check">
                         <input
-                          class="form-check-input"
+                          class="form-check-input radio-input-modal-departamentos"
                           type="radio"
                           name="flexRadioHabServicioDepartamentos"
                           id="flexRadioHabServicioTrueDepartamentos"
@@ -2375,7 +2338,7 @@
                       </div>
                       <div class="form-check">
                         <input
-                          class="form-check-input"
+                          class="form-check-input radio-input-modal-departamentos"
                           type="radio"
                           name="flexRadioHabServicioDepartamentos"
                           id="flexRadioHabServicioFalseDepartamentos"
@@ -2398,7 +2361,7 @@
                   >
                   <div class="form-check">
                     <input
-                      class="form-check-input"
+                      class="form-check-input radio-input-modal-departamentos"
                       type="radio"
                       name="flexRadioBodegaDepartamentos"
                       id="flexRadioBodegaTrueDepartamentos"
@@ -2412,7 +2375,7 @@
                   </div>
                   <div class="form-check">
                     <input
-                      class="form-check-input"
+                      class="form-check-input radio-input-modal-departamentos"
                       type="radio"
                       name="flexRadioBodegaDepartamentos"
                       id="flexRadioBodegaFalseDepartamentos"
@@ -2436,7 +2399,433 @@
             >
               Cerrar
             </button>
-            <button type="button" class="btn btn-primary">
+            <button
+              type="button"
+              class="btn btn-primary btn-add-tipologia-departamentos"
+              data-bs-dismiss="modal"
+            >
+              Guardar cambios
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      id="modalFormDepartamentosEdit"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Tipología - Departamentos
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-dialog-scrollable">
+            <div class="container">
+              <div class="form-caracteristicas-departamentos-container">
+                <div class="row">
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 input-campo">
+                      <label
+                        for="inputNuevoProyectoModeloDepartamentos"
+                        class="form-label"
+                        >Modelo</label
+                      >
+                      <input
+                        type="text"
+                        autocomplete="off"
+                        class="form-control field-modal-departamentos-edit"
+                        id="inputNuevoProyectoModeloDepartamentos"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 input-campo">
+                      <label
+                        for="inputNuevoProyectoPrecioDepartamentos"
+                        class="form-label"
+                        >Precio</label
+                      >
+                      <input
+                        type="text"
+                        autocomplete="off"
+                        class="form-control inputModalNumberDepas field-modal-departamentos-edit"
+                        id="inputNuevoProyectoPrecioDepartamentos"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 input-campo">
+                      <label
+                        for="inputNuevoProyectoM2Departamentos"
+                        class="form-label"
+                        >M<sup>2</sup></label
+                      >
+                      <input
+                        type="text"
+                        autocomplete="off"
+                        class="form-control inputModalNumberDepas field-modal-departamentos-edit"
+                        id="inputNuevoProyectoM2Departamentos"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 input-campo">
+                      <label
+                        for="inputNuevoProyectoPrecioPorM2Departamentos"
+                        class="form-label"
+                        >Precio / M<sup>2</sup></label
+                      >
+                      <input
+                        type="text"
+                        autocomplete="off"
+                        class="form-control inputModalNumberDepas field-modal-departamentos-edit"
+                        id="inputNuevoProyectoPrecioPorM2Departamentos"
+                        disabled
+                        readonly
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 input-campo">
+                      <label
+                        for="inputNuevoProyectoRecamarasDepartamentos"
+                        class="form-label"
+                        >Recamaras</label
+                      >
+                      <input
+                        type="text"
+                        autocomplete="off"
+                        class="form-control inputModalNumberDepas field-modal-departamentos-edit"
+                        id="inputNuevoProyectoRecamarasDepartamentos"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 input-campo">
+                      <label
+                        for="inputNuevoProyectoBaniosDepartamentos"
+                        class="form-label"
+                        >Baños</label
+                      >
+                      <input
+                        type="text"
+                        autocomplete="off"
+                        class="form-control inputModalNumberDepas field-modal-departamentos-edit"
+                        id="inputNuevoProyectoBaniosDepartamentos"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label
+                    for="inputNuevoProyectoMedioBaniosDepartamentos"
+                    class="form-label input-campo"
+                    >1/2 Baños</label
+                  >
+                  <input
+                    type="text"
+                    autocomplete="off"
+                    class="form-control inputModalNumberDepas field-modal-departamentos-edit"
+                    id="inputNuevoProyectoMedioBaniosDepartamentos"
+                  />
+                </div>
+                <div class="row">
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 radio-check-terrazas-depas">
+                      <label
+                        for="flexRadioWalkinTerrazaTrueDepartamentos"
+                        class="form-label"
+                        >Terraza</label
+                      >
+                      <div class="form-check">
+                        <input
+                          class="form-check-input radio-input-modal-departamentos-edit"
+                          type="radio"
+                          name="flexRadioWalkinTerrazaDepartamentos"
+                          id="flexRadioWalkinTerrazaTrueDepartamentos"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="flexRadioWalkinTerrazaTrueDepartamentos"
+                        >
+                          Sí
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input
+                          class="form-check-input radio-input-modal-departamentos-edit"
+                          type="radio"
+                          name="flexRadioWalkinTerrazaDepartamentos"
+                          id="flexRadioWalkinTerrazaFalseDepartamentos"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="flexRadioWalkinTerrazaFalseDepartamentos"
+                        >
+                          No
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3">
+                      <label
+                        for="inputNuevoProyectoM2DeTerrazasDepartamentos"
+                        class="form-label"
+                        >M<sup>2</sup> de terrazas</label
+                      >
+                      <input
+                        type="text"
+                        autocomplete="off"
+                        class="form-control inputModalNumberDepas field-modal-departamentos-edit"
+                        id="inputNuevoProyectoM2DeTerrazasDepartamentos"
+                        disabled
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 input-campo">
+                      <label
+                        for="inputNuevoProyectoM2TerrenoDepartamentos"
+                        class="form-label"
+                        >Cajones de estacionamiento</label
+                      >
+                      <input
+                        type="text"
+                        autocomplete="off"
+                        class="form-control inputModalNumberDepas field-modal-departamentos-edit"
+                        id="inputNuevoProyectoM2TerrenoDepartamentos"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="mb-3 input-campo">
+                      <label
+                        for="inputNuevoProyectoM2TerrenoDepartamentos"
+                        class="form-label"
+                        >Condiciones de entrega</label
+                      >
+                      <input
+                        type="text"
+                        autocomplete="off"
+                        class="form-control field-modal-departamentos-edit"
+                        id="inputNuevoProyectoM2TerrenoDepartamentos"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-6">
+                    <div class="mb-3 radio-check-depas">
+                      <label
+                        for="inputNuevoProyectoWalkinClosetDepartamentos"
+                        class="form-label"
+                        >Walking closet</label
+                      >
+                      <div class="form-check">
+                        <input
+                          class="form-check-input radio-input-modal-departamentos-edit"
+                          type="radio"
+                          name="flexRadioWalkinClosetDepartamentos"
+                          id="flexRadioWalkinClosetTrueDepartamentos"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="flexRadioWalkinClosetTrueDepartamentos"
+                        >
+                          Sí
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input
+                          class="form-check-input radio-input-modal-departamentos-edit"
+                          type="radio"
+                          name="flexRadioWalkinClosetDepartamentos"
+                          id="flexRadioWalkinClosetFalseDepartamentos"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="flexRadioWalkinClosetFalseDepartamentos"
+                        >
+                          No
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="mb-3 radio-check-depas">
+                      <label
+                        for="inputNuevoProyectoFlexDepartamentos"
+                        class="form-label"
+                        >Flex</label
+                      >
+                      <div class="form-check">
+                        <input
+                          class="form-check-input radio-input-modal-departamentos-edit"
+                          type="radio"
+                          name="flexRadioFlexDepartamentos"
+                          id="flexRadioFlexTrueDepartamentos"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="flexRadioFlexTrueDepartamentos"
+                        >
+                          Sí
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input
+                          class="form-check-input radio-input-modal-departamentos-edit"
+                          type="radio"
+                          name="flexRadioFlexDepartamentos"
+                          id="flexRadioWalkinClosetFalseDepartamentos"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="flexRadioWalkinClosetFalseDepartamentos"
+                        >
+                          No
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="mb-3 radio-check-depas">
+                      <label
+                        for="inputNuevoProyectoLockOffDepartamentos"
+                        class="form-label"
+                        >Lock off</label
+                      >
+                      <div class="form-check">
+                        <input
+                          class="form-check-input radio-input-modal-departamentos-edit"
+                          type="radio"
+                          name="flexRadioLockOffDepartamentos"
+                          id="flexRadioLockOffTrueDepartamentos"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="flexRadioLockOffTrueDepartamentos"
+                        >
+                          Sí
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input
+                          class="form-check-input radio-input-modal-departamentos-edit"
+                          type="radio"
+                          name="flexRadioLockOffDepartamentos"
+                          id="flexRadioLockOffFalseDepartamentos"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="flexRadioLockOffFalseDepartamentos"
+                        >
+                          No
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="mb-3 radio-check-depas">
+                      <label
+                        for="inputNuevoProyectoHabServicioDepartamentos"
+                        class="form-label"
+                        >Habitación de servicio</label
+                      >
+                      <div class="form-check">
+                        <input
+                          class="form-check-input radio-input-modal-departamentos-edit"
+                          type="radio"
+                          name="flexRadioHabServicioDepartamentos"
+                          id="flexRadioHabServicioTrueDepartamentos"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="flexRadioHabServicioTrueDepartamentos"
+                        >
+                          Sí
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input
+                          class="form-check-input radio-input-modal-departamentos-edit"
+                          type="radio"
+                          name="flexRadioHabServicioDepartamentos"
+                          id="flexRadioHabServicioFalseDepartamentos"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="flexRadioHabServicioFalseDepartamentos"
+                        >
+                          No
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="mb-3 radio-check-depas">
+                  <label
+                    for="inputNuevoProyectoBodegaDepartamentos"
+                    class="form-label"
+                    >Bodega</label
+                  >
+                  <div class="form-check">
+                    <input
+                      class="form-check-input radio-input-modal-departamentos-edit"
+                      type="radio"
+                      name="flexRadioBodegaDepartamentos"
+                      id="flexRadioBodegaTrueDepartamentos"
+                    />
+                    <label
+                      class="form-check-label"
+                      for="flexRadioBodegaTrueDepartamentos"
+                    >
+                      Sí
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input radio-input-modal-departamentos-edit"
+                      type="radio"
+                      name="flexRadioBodegaDepartamentos"
+                      id="flexRadioBodegaFalseDepartamentos"
+                    />
+                    <label
+                      class="form-check-label"
+                      for="flexRadioBodegaFalseCasas"
+                    >
+                      No
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cerrar
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary btn-add-tipologia-departamentos-edit"
+              data-bs-dismiss="modal"
+            >
               Guardar cambios
             </button>
           </div>
