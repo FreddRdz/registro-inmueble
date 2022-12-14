@@ -90,3 +90,14 @@
 .trash-icon:hover {
   color: #dc3545;
 }
+
+.imgs-tipologias {
+  height: 100px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.img-to-show {
+  height: 200px;
+  object-fit: cover;
+}

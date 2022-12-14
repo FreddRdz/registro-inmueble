@@ -1,3 +1,153 @@
+let images = [];
+let imageId;
+let imagesEdit = [];
+
+function previewFiles() {
+  // let preview = document.querySelector('.display-images');
+  let files = document.querySelector('input[type=file]').files;
+
+  function readAndPreview(file) {
+    // Asegurate que `file.name` coincida con el criterio de extensiones
+    if (/\.(jpe?g|png|gif)$/i.test(file.name)) {
+      let reader = new FileReader();
+
+      reader.addEventListener(
+        'load',
+        function () {
+          let image = new Image();
+          image.height = 100;
+          image.title = file.name;
+          image.src = this.result;
+          images.push(this.result);
+          showImages(images);
+        },
+        false
+      );
+
+      reader.readAsDataURL(file);
+    }
+  }
+
+  if (files) {
+    [].forEach.call(files, readAndPreview);
+  }
+}
+
+function previewFilesEdit() {
+  // let preview = document.querySelector('.display-images');
+  let files = document.querySelector('.input-image-edit').files;
+
+  function readAndPreview(file) {
+    // Asegurate que `file.name` coincida con el criterio de extensiones
+    if (/\.(jpe?g|png|gif)$/i.test(file.name)) {
+      let reader = new FileReader();
+
+      reader.addEventListener(
+        'load',
+        function () {
+          let image = new Image();
+          image.height = 100;
+          image.title = file.name;
+          image.src = this.result;
+          imagesEdit.push(this.result);
+          showImagesEdit(imagesEdit);
+        },
+        false
+      );
+
+      reader.readAsDataURL(file);
+    }
+  }
+
+  if (files) {
+    [].forEach.call(files, readAndPreview);
+  }
+}
+
+const showImages = (images) => {
+  let div = '';
+
+  if (images) {
+    images.forEach((image, id) => {
+      div += `
+        <div class="col-3 mb-4">
+          <img class="img-thumbnail imgs-tipologias" 
+            onClick="showImageDetail(${id})"
+            data-bs-toggle="modal"
+            data-bs-target="#staticBackdrop" src="${image}" />
+        </div>
+      `;
+    });
+  }
+
+  document.querySelector('.display-images').innerHTML = div;
+};
+
+const showImagesEdit = (images) => {
+  let div = '';
+
+  if (images) {
+    images.forEach((image, id) => {
+      div += `
+        <div class="col-3 mb-4">
+          <img class="img-thumbnail imgs-tipologias" 
+            onClick="showImageDetailEdit(${id})"
+            data-bs-toggle="modal"
+            data-bs-target="#staticBackdropEdit" src="${image}" />
+        </div>
+      `;
+    });
+  }
+
+  document.querySelector('.display-images-edit').innerHTML = div;
+};
+
+const imageToShow = document.querySelector('.image-to-show');
+const imageToShowEdit = document.querySelector('.image-to-show-edit');
+
+const showImageDetail = (id) => {
+  imageId = id;
+  imageToShow.src = images[id];
+};
+
+const showImageDetailEdit = (id) => {
+  imageId = id;
+  imageToShowEdit.src = imagesEdit[id];
+};
+
+const btnDeleteImageDetail = document.querySelector('.delete-image-detail');
+const btnDeleteImageDetailEdit = document.querySelector(
+  '.delete-image-detail-edit'
+);
+
+btnDeleteImageDetail.addEventListener('click', () => {
+  let array = [];
+
+  for (let i = 0; i < images.length; i++) {
+    const element = images[i];
+    if (imageId !== i) {
+      array.push(element);
+    }
+  }
+
+  images = [...array];
+  showImages(images);
+});
+
+btnDeleteImageDetailEdit.addEventListener('click', () => {
+  let array = [];
+
+  for (let i = 0; i < imagesEdit.length; i++) {
+    const element = imagesEdit[i];
+    if (imageId !== i) {
+      array.push(element);
+    }
+  }
+
+  imagesEdit = [...array];
+  showImagesEdit(imagesEdit);
+});
+
 // Añadir tipologías en las tablas de los terrenos
 
 const btnAddTipologyTerrain = document.querySelector(
@@ -37,13 +187,7 @@ const showTipologiesTerrains = () => {
             class="button-table" 
             data-bs-toggle="modal"
             data-bs-target="#modalFormTerrenosEdit" 
-            onClick="editTipologyTerrenos(${id}, '${tipology.modelo}', '${
-        tipology.precio
-      }', '${tipology.m2Terreno}', '${tipology.frente}', '${
-        tipology.fondo
-      }', '${tipology.precioM2}', '${tipology.cus}', '${tipology.cusTotal}', '${
-        tipology.cos
-      }', '${tipology.cosTotal}', '${tipology.alturaMaxima}')">
+            onClick="editTipologyTerrenos(${id})">
               <i class="fa-solid fa-pen fa-lg pen-icon"></i>
             </button>
           </td>
@@ -77,14 +221,18 @@ btnAddTipologyTerrain.addEventListener('click', () => {
     cos: fieldsInputsTerrain[8].value.trim(),
     cosTotal: fieldsInputsTerrain[9].value.trim(),
     alturaMaxima: fieldsInputsTerrain[10].value.trim(),
+    images: images,
   };
 
   fieldsInputsTerrain.forEach((field) => {
     field.value = '';
   });
 
+  images = [];
+
   tipologiesTerrains.push(tipology);
 
+  showImages(images);
   showTipologiesTerrains();
 });
 
@@ -101,12 +249,26 @@ const deleteTipologyTerrenos = (id) => {
   showTipologiesTerrains();
 };
 
-const editTipologyTerrenos = (id, ...args) => {
+const editTipologyTerrenos = (id) => {
+  imagesEdit = [];
   idEditTerrain = id;
-  for (let i = 0; i < args.length; i++) {
-    const element = args[i];
-    fieldsInputsTerrainEdits[i].value = element;
-  }
+  const tipologyModified = { ...tipologiesTerrains[id] };
+
+  fieldsInputsTerrainEdits[0].value = tipologyModified.modelo;
+  fieldsInputsTerrainEdits[1].value = tipologyModified.precio;
+  fieldsInputsTerrainEdits[2].value = tipologyModified.m2Terreno;
+  fieldsInputsTerrainEdits[3].value = tipologyModified.frente;
+  fieldsInputsTerrainEdits[4].value = tipologyModified.fondo;
+  fieldsInputsTerrainEdits[5].value = tipologyModified.precioM2;
+  fieldsInputsTerrainEdits[6].value = tipologyModified.cus;
+  fieldsInputsTerrainEdits[7].value = tipologyModified.cusTotal;
+  fieldsInputsTerrainEdits[8].value = tipologyModified.cos;
+  fieldsInputsTerrainEdits[9].value = tipologyModified.cosTotal;
+  fieldsInputsTerrainEdits[10].value = tipologyModified.cosTotal;
+
+  imagesEdit = [...tipologyModified.images];
+
+  showImagesEdit(tipologyModified.images);
 };
 
 btnAddTipologyTerrainEdit.addEventListener('click', () => {
@@ -122,6 +284,7 @@ btnAddTipologyTerrainEdit.addEventListener('click', () => {
     cos: fieldsInputsTerrainEdits[8].value.trim(),
     cosTotal: fieldsInputsTerrainEdits[9].value.trim(),
     alturaMaxima: fieldsInputsTerrainEdits[10].value.trim(),
+    images: imagesEdit,
   };
 
   tipologiesTerrains[idEditTerrain] = { ...tipologyEdit };

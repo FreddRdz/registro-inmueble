@@ -3020,6 +3020,21 @@
                     id="inputNuevoProyectoAlturaMaximaTerrenos"
                   />
                 </div>
+                <div class="mb-3 input-campo field-modal-terrain">
+                  <label for="formFileTerrenos" class="form-label"
+                    >Imagenes</label
+                  >
+                  <input
+                    class="form-control image-input mb-3"
+                    type="file"
+                    onchange="previewFiles()"
+                    accept="image/png, image/jpg, image/jpeg"
+                    id="formFileTerrenos"
+                  />
+                  <div class="col-12">
+                    <div class="row display-images d-flex"></div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -3230,6 +3245,21 @@
                     id="inputNuevoProyectoAlturaMaximaTerrenos"
                   />
                 </div>
+                <div class="mb-3 input-campo field-modal-terrain-edit">
+                  <label for="formFileTerrenos" class="form-label"
+                    >Imagenes</label
+                  >
+                  <input
+                    class="form-control image-input mb-3 input-image-edit"
+                    type="file"
+                    onchange="previewFilesEdit()"
+                    accept="image/png, image/jpg, image/jpeg"
+                    id="formFileTerrenos"
+                  />
+                  <div class="col-12">
+                    <div class="row display-images-edit d-flex"></div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -3252,10 +3282,103 @@
         </div>
       </div>
     </div>
+    <div
+      class="modal fade"
+      id="staticBackdrop"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">
+              Imagen detallada
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <img src="" alt="" class="image-to-show img-thumbnail" />
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cerrar
+            </button>
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              class="btn btn-danger delete-image-detail"
+            >
+              Eliminar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      id="staticBackdropEdit"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">
+              Imagen detallada
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <img
+              src=""
+              alt=""
+              class="image-to-show img-thumbnail image-to-show-edit"
+            />
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cerrar
+            </button>
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              class="btn btn-danger delete-image-detail-edit"
+            >
+              Eliminar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./js/script.js"></script>
     <script src="./js/validateForm.js"></script>
     <script src="./js/addAmenidades.js"></script>
     <script src="./js/addTipologias.js"></script>
+    <script src="./js/addImages.js"></script>
   </body>
 </html>
