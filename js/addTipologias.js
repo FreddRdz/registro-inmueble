@@ -2,9 +2,28 @@ let images = [];
 let imageId;
 let imagesEdit = [];
 
-function previewFiles() {
+const selectKindProject = document.querySelector('.select-proyecto-registro');
+
+selectKindProject.addEventListener('change', () => {
+  if (selectKindProject.value !== 'Terrenos') {
+    tipologiesTerrains = [];
+    showTipologiesTerrains();
+  }
+
+  if (selectKindProject.value !== 'Departamentos') {
+    tipologiesDepartments = [];
+    showTipologiesDepartments();
+  }
+
+  if (selectKindProject.value !== 'Casas') {
+    tipologiesHouses = [];
+    showTipologiesHouses();
+  }
+});
+
+function previewFilesHouses() {
   // let preview = document.querySelector('.display-images');
-  let files = document.querySelector('input[type=file]').files;
+  let files = document.querySelector('.input-image-casas').files;
 
   function readAndPreview(file) {
     // Asegurate que `file.name` coincida con el criterio de extensiones
@@ -19,7 +38,7 @@ function previewFiles() {
           image.title = file.name;
           image.src = this.result;
           images.push(this.result);
-          showImages(images);
+          showImages(images, 'Casas');
         },
         false
       );
@@ -33,9 +52,9 @@ function previewFiles() {
   }
 }
 
-function previewFilesEdit() {
+function previewFilesEditHouses() {
   // let preview = document.querySelector('.display-images');
-  let files = document.querySelector('.input-image-edit').files;
+  let files = document.querySelector('.input-image-edit-casas').files;
 
   function readAndPreview(file) {
     // Asegurate que `file.name` coincida con el criterio de extensiones
@@ -50,7 +69,7 @@ function previewFilesEdit() {
           image.title = file.name;
           image.src = this.result;
           imagesEdit.push(this.result);
-          showImagesEdit(imagesEdit);
+          showImagesEdit(imagesEdit, 'Casas');
         },
         false
       );
@@ -64,42 +83,236 @@ function previewFilesEdit() {
   }
 }
 
-const showImages = (images) => {
-  let div = '';
+function previewFilesDepartments() {
+  // let preview = document.querySelector('.display-images');
+  let files = document.querySelector('.input-image-departamentos').files;
 
-  if (images) {
-    images.forEach((image, id) => {
-      div += `
-        <div class="col-3 mb-4">
-          <img class="img-thumbnail imgs-tipologias" 
-            onClick="showImageDetail(${id})"
-            data-bs-toggle="modal"
-            data-bs-target="#staticBackdrop" src="${image}" />
-        </div>
-      `;
-    });
+  function readAndPreview(file) {
+    // Asegurate que `file.name` coincida con el criterio de extensiones
+    if (/\.(jpe?g|png|gif)$/i.test(file.name)) {
+      let reader = new FileReader();
+
+      reader.addEventListener(
+        'load',
+        function () {
+          let image = new Image();
+          image.height = 100;
+          image.title = file.name;
+          image.src = this.result;
+          images.push(this.result);
+          showImages(images, 'Departamentos');
+        },
+        false
+      );
+
+      reader.readAsDataURL(file);
+    }
   }
 
-  document.querySelector('.display-images').innerHTML = div;
+  if (files) {
+    [].forEach.call(files, readAndPreview);
+  }
+}
+
+function previewFilesEditDepartments() {
+  // let preview = document.querySelector('.display-images');
+  let files = document.querySelector('.input-image-edit-departamentos').files;
+
+  function readAndPreview(file) {
+    // Asegurate que `file.name` coincida con el criterio de extensiones
+    if (/\.(jpe?g|png|gif)$/i.test(file.name)) {
+      let reader = new FileReader();
+
+      reader.addEventListener(
+        'load',
+        function () {
+          let image = new Image();
+          image.height = 100;
+          image.title = file.name;
+          image.src = this.result;
+          imagesEdit.push(this.result);
+          showImagesEdit(imagesEdit, 'Departamentos');
+        },
+        false
+      );
+
+      reader.readAsDataURL(file);
+    }
+  }
+
+  if (files) {
+    [].forEach.call(files, readAndPreview);
+  }
+}
+
+function previewFilesTerrain() {
+  // let preview = document.querySelector('.display-images');
+  let files = document.querySelector('.input-image-terreno').files;
+
+  function readAndPreview(file) {
+    // Asegurate que `file.name` coincida con el criterio de extensiones
+    if (/\.(jpe?g|png|gif)$/i.test(file.name)) {
+      let reader = new FileReader();
+
+      reader.addEventListener(
+        'load',
+        function () {
+          let image = new Image();
+          image.height = 100;
+          image.title = file.name;
+          image.src = this.result;
+          images.push(this.result);
+          showImages(images, 'Terrenos');
+        },
+        false
+      );
+
+      reader.readAsDataURL(file);
+    }
+  }
+
+  if (files) {
+    [].forEach.call(files, readAndPreview);
+  }
+}
+
+function previewFilesEditTerrain() {
+  // let preview = document.querySelector('.display-images');
+  let files = document.querySelector('.input-image-edit-terrenos').files;
+
+  function readAndPreview(file) {
+    // Asegurate que `file.name` coincida con el criterio de extensiones
+    if (/\.(jpe?g|png|gif)$/i.test(file.name)) {
+      let reader = new FileReader();
+
+      reader.addEventListener(
+        'load',
+        function () {
+          let image = new Image();
+          image.height = 100;
+          image.title = file.name;
+          image.src = this.result;
+          imagesEdit.push(this.result);
+          showImagesEdit(imagesEdit, 'Terrenos');
+        },
+        false
+      );
+
+      reader.readAsDataURL(file);
+    }
+  }
+
+  if (files) {
+    [].forEach.call(files, readAndPreview);
+  }
+}
+
+const showImages = (images, project) => {
+  let div = '';
+
+  if (project === 'Terrenos') {
+    if (images) {
+      images.forEach((image, id) => {
+        div += `
+          <div class="col-3 mb-4">
+            <img class="img-thumbnail imgs-tipologias" 
+              onClick="showImageDetail(${id})"
+              data-bs-toggle="modal"
+              data-bs-target="#staticBackdrop" src="${image}" />
+          </div>
+        `;
+      });
+    }
+    document.querySelector('.display-images-terrenos').innerHTML = div;
+  }
+
+  if (project === 'Departamentos') {
+    if (images) {
+      images.forEach((image, id) => {
+        div += `
+          <div class="col-3 mb-4">
+            <img class="img-thumbnail imgs-tipologias" 
+              onClick="showImageDetail(${id})"
+              data-bs-toggle="modal"
+              data-bs-target="#staticBackdrop" src="${image}" />
+          </div>
+        `;
+      });
+    }
+    document.querySelector('.display-images-departamentos').innerHTML = div;
+  }
+
+  if (project === 'Casas') {
+    if (images) {
+      images.forEach((image, id) => {
+        div += `
+          <div class="col-3 mb-4">
+            <img class="img-thumbnail imgs-tipologias" 
+              onClick="showImageDetail(${id})"
+              data-bs-toggle="modal"
+              data-bs-target="#staticBackdrop" src="${image}" />
+          </div>
+        `;
+      });
+    }
+    document.querySelector('.display-images-casas').innerHTML = div;
+  }
 };
 
-const showImagesEdit = (images) => {
+const showImagesEdit = (images, project) => {
   let div = '';
 
-  if (images) {
-    images.forEach((image, id) => {
-      div += `
-        <div class="col-3 mb-4">
-          <img class="img-thumbnail imgs-tipologias" 
-            onClick="showImageDetailEdit(${id})"
-            data-bs-toggle="modal"
-            data-bs-target="#staticBackdropEdit" src="${image}" />
-        </div>
-      `;
-    });
+  if (project === 'Terrenos') {
+    if (images) {
+      images.forEach((image, id) => {
+        div += `
+          <div class="col-3 mb-4">
+            <img class="img-thumbnail imgs-tipologias" 
+              onClick="showImageDetailEdit(${id})"
+              data-bs-toggle="modal"
+              data-bs-target="#staticBackdropEdit" src="${image}" />
+          </div>
+        `;
+      });
+    }
+
+    document.querySelector('.display-images-edit-terrenos').innerHTML = div;
   }
 
-  document.querySelector('.display-images-edit').innerHTML = div;
+  if (project === 'Terrenos') {
+    if (images) {
+      images.forEach((image, id) => {
+        div += `
+          <div class="col-3 mb-4">
+            <img class="img-thumbnail imgs-tipologias" 
+              onClick="showImageDetailEdit(${id})"
+              data-bs-toggle="modal"
+              data-bs-target="#staticBackdropEdit" src="${image}" />
+          </div>
+        `;
+      });
+    }
+
+    document.querySelector('.display-images-edit-departamentos').innerHTML =
+      div;
+  }
+
+  if (project === 'Casas') {
+    if (images) {
+      images.forEach((image, id) => {
+        div += `
+          <div class="col-3 mb-4">
+            <img class="img-thumbnail imgs-tipologias" 
+              onClick="showImageDetailEdit(${id})"
+              data-bs-toggle="modal"
+              data-bs-target="#staticBackdropEdit" src="${image}" />
+          </div>
+        `;
+      });
+    }
+
+    document.querySelector('.display-images-edit-casas').innerHTML = div;
+  }
 };
 
 const imageToShow = document.querySelector('.image-to-show');
@@ -131,7 +344,18 @@ btnDeleteImageDetail.addEventListener('click', () => {
   }
 
   images = [...array];
-  showImages(images);
+
+  if (selectKindProject.value === 'Terrenos') {
+    showImages(images, 'Terrenos');
+  }
+
+  if (selectKindProject.value === 'Departamentos') {
+    showImages(images, 'Departamentos');
+  }
+
+  if (selectKindProject.value === 'Casas') {
+    showImages(images, 'Casas');
+  }
 });
 
 btnDeleteImageDetailEdit.addEventListener('click', () => {
@@ -145,7 +369,18 @@ btnDeleteImageDetailEdit.addEventListener('click', () => {
   }
 
   imagesEdit = [...array];
-  showImagesEdit(imagesEdit);
+
+  if (selectKindProject.value === 'Terrenos') {
+    showImagesEdit(imagesEdit, 'Terrenos');
+  }
+
+  if (selectKindProject.value === 'Departamentos') {
+    showImagesEdit(imagesEdit, 'Departamentos');
+  }
+
+  if (selectKindProject.value === 'Casas') {
+    showImagesEdit(imagesEdit, 'Casas');
+  }
 });
 
 // Añadir tipologías en las tablas de los terrenos
@@ -160,12 +395,10 @@ const btnAddTipologyTerrainEdit = document.querySelector(
 
 const rowBodyTerrain = document.querySelector('.t-body-terrenos');
 
-const fieldsInputsTerrain = document.querySelectorAll(
-  '.field-modal-terrain > input'
-);
+const fieldsInputsTerrain = document.querySelectorAll('.field-modal-terrain');
 
 const fieldsInputsTerrainEdits = document.querySelectorAll(
-  '.field-modal-terrain-edit > input'
+  '.field-modal-terrain-edit'
 );
 
 let tipologiesTerrains = [];
@@ -222,6 +455,7 @@ btnAddTipologyTerrain.addEventListener('click', () => {
     cosTotal: fieldsInputsTerrain[9].value.trim(),
     alturaMaxima: fieldsInputsTerrain[10].value.trim(),
     images: images,
+    description: fieldsInputsTerrain[12].value.trim(),
   };
 
   fieldsInputsTerrain.forEach((field) => {
@@ -232,7 +466,7 @@ btnAddTipologyTerrain.addEventListener('click', () => {
 
   tipologiesTerrains.push(tipology);
 
-  showImages(images);
+  showImages(images, 'Terrenos');
   showTipologiesTerrains();
 });
 
@@ -264,11 +498,12 @@ const editTipologyTerrenos = (id) => {
   fieldsInputsTerrainEdits[7].value = tipologyModified.cusTotal;
   fieldsInputsTerrainEdits[8].value = tipologyModified.cos;
   fieldsInputsTerrainEdits[9].value = tipologyModified.cosTotal;
-  fieldsInputsTerrainEdits[10].value = tipologyModified.cosTotal;
+  fieldsInputsTerrainEdits[10].value = tipologyModified.alturaMaxima;
+  fieldsInputsTerrainEdits[12].value = tipologyModified.description;
 
   imagesEdit = [...tipologyModified.images];
 
-  showImagesEdit(tipologyModified.images);
+  showImagesEdit(tipologyModified.images, 'Terrenos');
 };
 
 btnAddTipologyTerrainEdit.addEventListener('click', () => {
@@ -285,6 +520,7 @@ btnAddTipologyTerrainEdit.addEventListener('click', () => {
     cosTotal: fieldsInputsTerrainEdits[9].value.trim(),
     alturaMaxima: fieldsInputsTerrainEdits[10].value.trim(),
     images: imagesEdit,
+    description: fieldsInputsTerrainEdits[12].value.trim(),
   };
 
   tipologiesTerrains[idEditTerrain] = { ...tipologyEdit };
@@ -393,6 +629,9 @@ btnAddTipologyHouses.addEventListener('click', () => {
       checkRadiosInputsHouses[10].checked,
       checkRadiosInputsHouses[11].checked,
     ],
+
+    images: images,
+    description: fieldsInputsHouses[12].value.trim(),
   };
 
   tipologiesHouses.push(tipology);
@@ -405,6 +644,9 @@ btnAddTipologyHouses.addEventListener('click', () => {
     checkBox.checked = false;
   });
 
+  images = [];
+
+  showImages(images, 'Casas');
   showTipologiesHouses();
 });
 
@@ -423,6 +665,7 @@ const deleteTipologyHouses = (id) => {
 
 const editTipologyHouses = (id) => {
   idEditHouse = id;
+  imagesEdit = [];
   const tipologyModified = { ...tipologiesHouses[id] };
 
   fieldsInputsHousesEdit[0].value = tipologyModified.modelo;
@@ -436,6 +679,7 @@ const editTipologyHouses = (id) => {
   fieldsInputsHousesEdit[8].value = tipologyModified.m2Terrazas;
   fieldsInputsHousesEdit[9].value = tipologyModified.condiciones;
   fieldsInputsHousesEdit[10].value = tipologyModified.cajones;
+  fieldsInputsHousesEdit[12].value = tipologyModified.description;
   checkRadiosInputsHousesEdit[0].checked = tipologyModified.terrazas[0];
   checkRadiosInputsHousesEdit[1].checked = tipologyModified.terrazas[1];
   checkRadiosInputsHousesEdit[2].checked = tipologyModified.walkingCloset[0];
@@ -448,6 +692,10 @@ const editTipologyHouses = (id) => {
   checkRadiosInputsHousesEdit[9].checked = tipologyModified.habServicio[1];
   checkRadiosInputsHousesEdit[10].checked = tipologyModified.bodega[0];
   checkRadiosInputsHousesEdit[11].checked = tipologyModified.bodega[1];
+
+  imagesEdit = [...tipologyModified.images];
+
+  showImagesEdit(tipologyModified.images, 'Casas');
 };
 
 btnModifyTipologyHouse.addEventListener('click', () => {
@@ -487,6 +735,9 @@ btnModifyTipologyHouse.addEventListener('click', () => {
       checkRadiosInputsHousesEdit[10].checked,
       checkRadiosInputsHousesEdit[11].checked,
     ],
+
+    images: imagesEdit,
+    description: fieldsInputsHousesEdit[12].value.trim(),
   };
 
   tipologiesHouses[idEditHouse] = { ...tipologyModified };
@@ -598,6 +849,8 @@ btnAddTipologyDepartments.addEventListener('click', () => {
       checkRadiosInputsDepartments[10].checked,
       checkRadiosInputsDepartments[11].checked,
     ],
+    images: images,
+    description: fieldsInputsDepartments[11].value.trim(),
   };
 
   tipologiesDepartments.push(tipology);
@@ -610,6 +863,9 @@ btnAddTipologyDepartments.addEventListener('click', () => {
     checkBox.checked = false;
   });
 
+  images = [];
+
+  showImages(images, 'Departamentos');
   showTipologiesDepartments();
 });
 
@@ -628,6 +884,7 @@ const deleteTipologyDepartments = (id) => {
 
 const editTipologyDepartments = (id) => {
   idEditDepartments = id;
+  imagesEdit = [];
   const tipologyModified = { ...tipologiesDepartments[id] };
 
   fieldsInputsDepartmentsEdit[0].value = tipologyModified.modelo;
@@ -640,6 +897,7 @@ const editTipologyDepartments = (id) => {
   fieldsInputsDepartmentsEdit[7].value = tipologyModified.m2Terrazas;
   fieldsInputsDepartmentsEdit[8].value = tipologyModified.cajones;
   fieldsInputsDepartmentsEdit[9].value = tipologyModified.condiciones;
+  fieldsInputsDepartmentsEdit[11].value = tipologyModified.description;
   checkRadiosInputsDepartmentsEdit[0].checked = tipologyModified.terrazas[0];
   checkRadiosInputsDepartmentsEdit[1].checked = tipologyModified.terrazas[1];
   checkRadiosInputsDepartmentsEdit[2].checked =
@@ -654,6 +912,10 @@ const editTipologyDepartments = (id) => {
   checkRadiosInputsDepartmentsEdit[9].checked = tipologyModified.habServicio[1];
   checkRadiosInputsDepartmentsEdit[10].checked = tipologyModified.bodega[0];
   checkRadiosInputsDepartmentsEdit[11].checked = tipologyModified.bodega[1];
+
+  imagesEdit = [...tipologyModified.images];
+
+  showImagesEdit(tipologyModified.images, 'Departamentos');
 };
 
 btnModifyTipologyDepartments.addEventListener('click', () => {
@@ -692,6 +954,9 @@ btnModifyTipologyDepartments.addEventListener('click', () => {
       checkRadiosInputsDepartmentsEdit[10].checked,
       checkRadiosInputsDepartmentsEdit[11].checked,
     ],
+
+    images: imagesEdit,
+    description: fieldsInputsDepartmentsEdit[11].value.trim(),
   };
 
   tipologiesDepartments[idEditDepartments] = { ...tipologyModified };

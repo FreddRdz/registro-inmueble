@@ -190,3 +190,99 @@ const handleOpenDeveloperContainer = () => {
   developerInfoContainer.classList.toggle('d-none');
   kindOfProject.classList.toggle('d-none');
 };
+
+const fieldsDepartments = document.querySelectorAll(
+  '.field-modal-departamentos'
+);
+
+const fieldsDepartmentsEdit = document.querySelectorAll(
+  '.field-modal-departamentos-edit'
+);
+
+fieldsDepartments[1].addEventListener('change', () => {
+  let num1 = numberWithOutComas(fieldsDepartments[1].value);
+  let num2 = numberWithOutComas(fieldsDepartments[2].value);
+
+  fieldsDepartments[3].value = num1 / num2;
+
+  if (fieldsDepartments[3].value === 'Infinity') {
+    fieldsDepartments[3].value = '';
+  } else {
+    fieldsDepartments[3].value = numberWithCommass(fieldsDepartments[3].value);
+  }
+});
+
+fieldsDepartments[2].addEventListener('change', () => {
+  let num1 = numberWithOutComas(fieldsDepartments[1].value);
+  let num2 = numberWithOutComas(fieldsDepartments[2].value);
+
+  fieldsDepartments[3].value = num1 / num2;
+
+  if (fieldsDepartments[3].value === 'Infinity') {
+    fieldsDepartments[3].value = '';
+  } else {
+    fieldsDepartments[3].value = numberWithCommass(fieldsDepartments[3].value);
+  }
+});
+
+fieldsDepartmentsEdit[1].addEventListener('change', () => {
+  let num1 = numberWithOutComas(fieldsDepartmentsEdit[1].value);
+  let num2 = numberWithOutComas(fieldsDepartmentsEdit[2].value);
+
+  fieldsDepartmentsEdit[3].value = num1 / num2;
+
+  if (fieldsDepartmentsEdit[3].value === 'Infinity') {
+    fieldsDepartmentsEdit[3].value = '';
+  } else {
+    fieldsDepartmentsEdit[3].value = numberWithCommass(
+      fieldsDepartmentsEdit[3].value
+    );
+  }
+});
+
+fieldsDepartmentsEdit[2].addEventListener('change', () => {
+  let num1 = numberWithOutComas(fieldsDepartmentsEdit[1].value);
+  let num2 = numberWithOutComas(fieldsDepartmentsEdit[2].value);
+
+  fieldsDepartmentsEdit[3].value = num1 / num2;
+
+  if (fieldsDepartmentsEdit[3].value === 'Infinity') {
+    fieldsDepartmentsEdit[3].value = '';
+  } else {
+    fieldsDepartmentsEdit[3].value = numberWithCommass(
+      fieldsDepartmentsEdit[3].value
+    );
+  }
+});
+
+const numberWithCommass = (value) => {
+  let newString = '';
+
+  if (value === '') {
+    return '';
+  }
+
+  for (let i = 0; i < value.length; i++) {
+    if (value[i] !== ',') {
+      newString = newString + value[i];
+    }
+  }
+
+  const num = Number(newString);
+
+  return num.toLocaleString('en-US');
+};
+
+const numberWithOutComas = (string) => {
+  let newString = '';
+
+  for (let i = 0; i < string.length; i++) {
+    const element = string[i];
+
+    if (element !== ',') {
+      newString = newString + element;
+    }
+  }
+
+  return Number(newString);
+};
